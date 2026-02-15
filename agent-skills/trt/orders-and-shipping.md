@@ -1,8 +1,13 @@
 # TRT Orders & Shipping (Medication)
 
 ## Scope
-This file covers MEDICATION orders (testosterone, HCG, ancillaries).
-For blood test kit delivery, see blood-tests.md.
+⚠️ **This file covers MEDICATION orders ONLY** (testosterone, HCG, ancillaries).
+
+**BLOOD TEST KITS ARE NOT MEDICATION.** If the patient is asking about a blood test kit delivery, STOP — do NOT use this file's decision tree. Use **blood-tests.md** instead. The SLA thresholds are different.
+
+How to tell the difference:
+- Order contains "Blood Test", "Test Kit", "Randox" → use **blood-tests.md**
+- Order contains "Testosterone", "Sustanon", "HCG", "Anastrozole" → use **this file**
 
 ## Order Tracking
 - All medication orders have outbound tracking
@@ -10,6 +15,8 @@ For blood test kit delivery, see blood-tests.md.
 - Format tracking as clickable link: [Track your delivery](URL)
 
 ## Medication Delivery SLA Decision Tree
+
+⚠️ REMINDER: This tree is for MEDICATION only. Blood test kits have their own SLA in blood-tests.md.
 
 Always call get_order_history first.
 
