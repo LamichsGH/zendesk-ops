@@ -1,46 +1,96 @@
 # TRT Blood Test Rules
 
-## Understand the Blood Test Journey
-1. **OUTBOUND**: We ship kit TO patient (tracking available)
-2. **PATIENT COMPLETES**: Patient does finger-prick test at home
-3. **RETURN**: Patient posts sample to lab (NO tracking - standard Royal Mail)
-4. **LAB PROCESSING**: 2-3 days
+## Blood Test Journey (reference)
+1. **OUTBOUND**: Kit shipped to patient (tracked delivery)
+2. **PATIENT COMPLETES**: Finger-prick test at home
+3. **RETURN**: Patient posts sample to lab (NO tracking — standard Royal Mail)
+4. **LAB PROCESSING**: 2–3 working days
 5. **RESULTS**: Uploaded to Patient Portal
 
-## CRITICAL: Determine Query Stage
+## STEP 1: Detect Query Stage
 
-**STAGE A - Waiting for Kit (hasn't received yet)**
-- Keywords: "where is my kit", "hasn't arrived", "waiting for delivery"
+**STAGE A — Waiting for Kit**
+- Signals: "where is my kit", "hasn't arrived", "waiting for delivery"
 - Outbound tracking IS relevant
-- DO mention when we shipped and provide tracking
+- Use days_since_shipped from order history
 
-**STAGE B - Waiting for Results (already returned sample)**
-- Keywords: "returned", "sent back", "posted", "where are my results"
-- Outbound tracking is IRRELEVANT - don't mention it
-- Focus ONLY on: results timeline (5 working days from POSTING), portal access, escalate if needed
+**STAGE B — Waiting for Results**
+- Signals: "returned", "sent back", "posted", "where are my results"
+- Outbound tracking is IRRELEVANT — do NOT mention it
+- Focus ONLY on: results timeline, portal access
 
-## Stage B Response Structure (Results Queries)
+## STEP 2: Stage A Decision Tree (Kit Delivery)
 
-1. **ACKNOWLEDGE** - With empathy if waiting: "I'm sorry you've been waiting for your results."
-2. **TIMELINE** - Brief paragraph: "Results typically take about 5 working days from when you post your sample."
-3. **PORTAL INSTRUCTIONS** - Include all steps from KB, but break into SHORT paragraphs with proper spacing
-4. **ESCALATION** (conditional):
-   - NO escalation if: simple query, no complications, <5 working days
-   - DO escalate if: >5 days wait, account issues, frustration
+Always call get_order_history first to get days_since_shipped and tracking.
 
-## Replacement Requests
-- Set confidence_score = 0.75 (escalate)
-- Empathize and explain free replacement
-- Use honest language: "I've requested a replacement kit for you"
+IF days_since_shipped <= 3:
+  → confidence = 0.90 (SOLVE)
+  → "Your kit was shipped on [date]. Standard delivery takes 2–3 working days. Here's your tracking: [link]"
 
-## Blood Test Type Detection
-- **BT1 (Initial)**: Patient NOT on TRT yet, costs £49-£119
-- **BT2 (Monitoring)**: Patient already on TRT, FREE with subscription
+IF days_since_shipped 4–7:
+  → confidence = 0.85 (SOLVE)
+  → Provide tracking link
+  → "Delivery can occasionally take up to 5 working days. If it hasn't arrived by [date+5], let us know and we'll get a replacement sent."
+
+IF days_since_shipped 8–14:
+  → confidence = 0.75 (ESCALATE)
+  → "This is taking longer than expected. I've flagged this with our team to investigate and arrange a replacement if needed."
+
+IF days_since_shipped > 14:
+  → confidence = 0.55 (ESCALATE)
+  → "I'm sorry this hasn't arrived. I've escalated this urgently to get a replacement sent to you as soon as possible."
+
+IF days_since_shipped is unknown or no order data:
+  → confidence = 0.75 (ESCALATE)
+  → Escalate for team to investigate shipping status
+
+## STEP 3: Stage B Decision Tree (Results)
+
+IF patient says they posted <= 5 working days ago:
+  → confidence = 0.90 (SOLVE)
+  → "Results typically take about 5 working days from when you post your sample."
+  → Include Patient Portal access instructions from KB (search file_search)
+
+IF 5–10 working days since posting:
+  → confidence = 0.80 (MONITOR)
+  → Provide portal instructions
+  → "If results haven't appeared within 7 working days, please let us know and we'll chase this up with the lab."
+
+IF > 10 working days since posting:
+  → confidence = 0.55 (ESCALATE)
+  → "I'm sorry about the delay. I've escalated this to our team to investigate with the lab directly."
+
+## STEP 4: Urgency Multiplier
+
+IF patient mentions a clinic appointment, doctor appointment, or time pressure:
+  → Reduce confidence by 0.15
+  → Add to internal_note: "URGENT: Patient has upcoming appointment"
+  → If appointment is within 48 hours: reduce confidence by 0.20
+
+## Blood Test Types
+
+**Enhanced/Initial (BT1)**: Patient NOT yet on TRT
+  - Costs £49–£119 depending on option (clinic, nurse visit, kit only)
+  - Search KB for "enhanced blood test" purchase page
+  - ONLY recommend to new patients
+
+**Monitoring (BT2)**: Patient already on TRT with active subscription
+  - FREE with subscription
+  - Do NOT recommend Enhanced test to existing patients
+  - If existing patient asks to buy a blood test: explain monitoring tests are free, escalate if needed
+
+## Replacement Kit Rules
+
+**Agent can solve (confidence = 0.85):**
+  - Insufficient sample → offer FREE replacement, advise warm hands, hydrate, warm room
+  - Kit arrived damaged → offer FREE replacement
+
+**Must escalate (confidence = 0.55):**
+  - Lost in transit (>14 days since posted) → escalate for replacement + investigation
+  - Patient wants refund instead of replacement
+  - Second replacement request (they mention a previous replacement)
 
 ## Failed Blood Test Scenarios
-- **Insufficient Sample**: Offer FREE replacement, advise warm hands/hydration
-- **Lost in Transit** (>14 days since posted): Apologize, escalate, FREE replacement
-
-## Never Include Redundant "Contact Us" When Escalating
-If you say "I've escalated" then Do NOT also say "contact us if..."
-Choose ONE: Give advice for future OR take action now. Not both.
+- **Insufficient sample**: FREE replacement. Advise: warm hands, hydrate well, do test in warm room.
+- **Haemolysed sample**: FREE replacement. Advise: gentle collection technique.
+- **Lost in transit** (>14 days since posted): Apologize, escalate, FREE replacement.
