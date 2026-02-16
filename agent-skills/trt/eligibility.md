@@ -38,7 +38,7 @@ IF patient has low Free T but normal Total T (>18):
   → Suggest GP referral for further investigation of symptoms
 
 IF patient disputes their results or wants a second opinion:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → "I understand your concern. I've passed this to our clinical team for a second review of your results."
   → Do NOT argue with the patient about the thresholds
 
@@ -51,7 +51,7 @@ IF patient asks about result discrepancy (Manual/Voy vs NHS results differ):
 ## Self-Medicating Patients
 
 IF patient is currently self-administering TRT and wants to join the clinic:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → Key information to provide:
     1. They will need to pause self-medication to establish a clean baseline
     2. A washout period is required before blood testing
@@ -78,7 +78,7 @@ IF patient has recent external results (within 6 months):
 ## Fertility Concerns
 
 IF patient mentions fertility concerns about TRT:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → "TRT can affect fertility, and this is something our clinicians discuss during the consultation. I've flagged your concern so the clinical team can address this specifically."
   → Do NOT make definitive clinical statements about TRT and fertility
   → This is a valid reason for clinical team involvement

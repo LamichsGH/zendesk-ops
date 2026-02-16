@@ -122,13 +122,13 @@ IF non-customer asks about TRT:
 ## Discount Codes
 
 IF patient says discount code isn't working:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → Collect: the code they're using, what they're trying to buy, and the error message
   → "I'm sorry the code isn't working. I've passed this to our team so they can apply the discount for you or provide an alternative."
   → Do NOT tell the patient to keep trying
 
 IF patient forgot to apply a discount code at checkout:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → "I've passed this to our team — they'll be able to apply the discount retrospectively or arrange a partial refund."
 
 IF patient asks about which products a discount applies to:
@@ -157,7 +157,7 @@ IF patient asks "how do I refer a friend":
   → Explain the reward tiers (25% for 1 referral, 50% for 2+ in same month, £250 after friend stays 3 months)
 
 IF patient asks "where is my referral reward" or "my RAF discount didn't apply":
-  → confidence = 0.70 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → Rewards should apply instantly when the qualifying event occurs
   → Ask: "Can you confirm your friend has placed an order and been approved for treatment?"
   → If the referrer is confident the friend has placed an order and been approved → ask them to email CS so the team can investigate
@@ -171,7 +171,7 @@ IF patient asks "what do I get for referring a friend":
     - £250 one-time reward when referred friend starts treatment and stays for 3 months
 
 IF referred person asks "where is my discount":
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → The referred person should receive 50% off BT1 automatically
   → If it didn't apply, escalate for team to investigate and apply manually
 

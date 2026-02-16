@@ -137,7 +137,7 @@ IF patient reports damaged or warm packaging:
 
 IF patient requests address change AND order NOT yet dispatched:
   → confidence = 0.55 (ESCALATE)
-  → "Your order hasn't shipped yet. Let me check if we can update the delivery address."
+  → "Your order hasn't shipped yet. Let me connect you with our team to see if the delivery address can be updated before dispatch."
 
 IF patient requests address change AND order already dispatched:
   → confidence = 0.88 (INFORM)

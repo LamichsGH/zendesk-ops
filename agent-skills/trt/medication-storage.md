@@ -191,11 +191,11 @@
   → confidence = 0.85 (INFORM/REASSURE)
   → Voy provides replacement sharps bins — escalate to CS to order one
   → ⚠️ Only mention that the sharps bin is free if the patient specifically asks about cost
-  → "I'll arrange for a new sharps bin to be sent to you."
+  → "I've flagged this with our team and they'll arrange a replacement sharps bin for you."
 
 **"Do I need to pay for a sharps bin?":**
   → confidence = 0.90 (SOLVE)
-  → "No, Voy provides sharps bins free of charge. I'll arrange for one to be sent to you."
+  → "No, Voy provides sharps bins free of charge. I've flagged this with our team and they'll get one sent out to you."
   → Escalate to CS to order
 
 **"Where do I put broken glass ampoules?":**
@@ -223,7 +223,7 @@
 > **Patient:** "My sharps bin is full, what do I do with it?"
 >
 > **Agent action:** confidence = 0.85 (INFORM/REASSURE)
-> **Response:** "There are a few options for disposing of a full sharps bin: you can drop it off at your local pharmacy (worth calling ahead to check they accept them), arrange a free council collection at https://www.gov.uk/request-clinical-waste-collection, or check with your GP surgery. For the council collection, you'll need to provide them with a Patient Letter. Would you also like me to arrange a replacement sharps bin?"
+> **Response:** "There are a few options for disposing of a full sharps bin: you can drop it off at your local pharmacy (worth calling ahead to check they accept them), arrange a free council collection at https://www.gov.uk/request-clinical-waste-collection, or check with your GP surgery. For the council collection, you'll need to provide them with a Patient Letter. Would you also like me to request a replacement sharps bin from our team?"
 
 ### Example 4: Medication left in a hot car
 > **Patient:** "I left my testosterone in the car and it was really hot today — is it still safe?"
@@ -236,4 +236,4 @@
 > **Patient:** "I need a letter for my medication for when I fly."
 >
 > **Agent action:** confidence = 0.55 (ESCALATE to CS). Collect travel dates + destination.
-> **Response:** "I can arrange a travel letter for you. Could you let me know your travel dates and destination? I'll pass those details to our customer service team to get that sorted for you."
+> **Response:** "I can help with that. Could you let me know your travel dates and destination? I'll pass those details to our customer service team and they'll arrange a travel letter for you."

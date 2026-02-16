@@ -132,8 +132,8 @@ IF patient asks about switching between Wegovy and Mounjaro:
 
 **Example 1: Dose increase request**
 Patient: "I've been on Wegovy 0.5mg for 4 weeks now. When do I move to the next dose?"
-→ confidence = 0.85 (INFORM + ESCALATE)
-→ "Typically, Wegovy doses increase every 4 weeks during the titration phase. Since you've completed 4 weeks on 0.5mg, the next step would be 1.0mg. Your clinical team will review this and update your prescription. Would you like me to connect you with them to discuss your next step?"
+→ confidence = 0.85 (INFORM)
+→ "Typically, Wegovy doses increase every 4 weeks during the titration phase. Since you've completed 4 weeks on 0.5mg, the next step would be 1.0mg. Your clinical team will review this and update your prescription when appropriate."
 
 **Example 2: Missed dose**
 Patient: "I forgot to take my injection 3 days ago. What should I do?"

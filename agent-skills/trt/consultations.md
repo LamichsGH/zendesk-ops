@@ -15,17 +15,17 @@ Before a patient can book their consultation, they must complete:
 ## Decision Tree: Booking Issues
 
 IF patient says "I can't find the booking option" or "booking tab has disappeared":
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → This usually means a task has expired or a pre-consultation step is incomplete
   → "It sounds like there may be an incomplete step or an expired task in your portal. I've flagged this for our team to check and reinstate your booking option."
 
 IF patient says "I paid but can't book":
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → Check if pre-consultation tasks are incomplete (ID, health profile, GP consent)
   → "I've passed this to our team to check your account. Sometimes the booking option appears once all the pre-consultation steps are completed — they'll make sure everything is in order."
 
 IF patient asks "I've been asked to pay again":
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → Likely a blocking task, not a duplicate charge
   → "This doesn't look right. I've flagged it for our team to investigate — you shouldn't need to pay twice."
 
@@ -41,8 +41,8 @@ IF patient asks about what happens IN the consultation:
 ## Decision Tree: Missed Appointments
 
 IF patient missed a consultation appointment:
-  → confidence = 0.75 (ESCALATE)
-  → "I'm sorry you missed your consultation. I've passed this to our team to help arrange a new booking for you."
+  → confidence = 0.55 (ESCALATE)
+  → "I'm sorry you missed your consultation. I've flagged this with our team and they'll help arrange a new booking for you."
   → Do NOT attempt to rebook directly
 
 IF patient missed a Randox blood test clinic appointment:
@@ -50,8 +50,8 @@ IF patient missed a Randox blood test clinic appointment:
   → "You can reschedule your Randox appointment through their portal using your booking code. If you don't have your code, let me know and I'll get our team to retrieve it for you."
 
 IF patient missed a nurse home visit:
-  → confidence = 0.75 (ESCALATE)
-  → "I've flagged this for our team to arrange a new nurse visit for you."
+  → confidence = 0.55 (ESCALATE)
+  → "I've flagged this with our team and they'll arrange a new nurse visit for you."
 
 ## Post-Results Journey ("What Happens Next?")
 
@@ -82,4 +82,4 @@ IF existing patient asks about a check-in or review consultation:
 IF existing patient says they were asked to complete additional tests before check-in:
   → Check order history — this may be a monitoring blood test (free with subscription)
   → If the system is asking them to BUY a test: likely an error
-  → confidence = 0.75 (ESCALATE) if it seems like a system error
+  → confidence = 0.55 (ESCALATE) if it seems like a system error

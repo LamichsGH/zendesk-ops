@@ -29,7 +29,7 @@ IF days_since_shipped 4–5:
   → Provide tracking, reassure: "Deliveries can occasionally take up to 5 working days"
 
 IF days_since_shipped 6–14:
-  → confidence = 0.70 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → "This is taking longer than expected. I've flagged this with our team to investigate."
   → Internal note: include tracking number, days elapsed
 
@@ -38,7 +38,7 @@ IF days_since_shipped > 14:
   → "I'm sorry about this delay. I've escalated this urgently for investigation."
 
 IF no tracking available but order exists:
-  → confidence = 0.70 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → "Your order is in our system but I don't have tracking details yet. I've flagged this for our team to check."
 
 ## Tracking Shows Delivered but Patient Says Not Received

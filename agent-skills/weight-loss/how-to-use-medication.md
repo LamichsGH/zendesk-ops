@@ -119,7 +119,7 @@ IF patient reports pen not working:
 
 IF pen confirmed faulty:
   → confidence = 0.50 (ESCALATE)
-  → "Please send a photo of the pen showing the batch number (in the black box on the pen) with the cap removed. This will help our team resolve this quickly."
+  → "Please send a photo of the pen showing the batch number (in the black box on the pen) with the cap removed. This will help our team arrange next steps for you."
   → ⚠️ NEVER promise or imply a replacement. Keep neutral: "to help with next steps"
 
 IF pen not faulty (user error identified):
@@ -157,7 +157,7 @@ IF patient asks about 7.2mg safety or side effects:
 
 IF patient reports damaged pen on delivery:
   → confidence = 0.55 (ESCALATE)
-  → "I'm sorry to hear your pen was damaged. Could you let me know what specifically appears damaged (bent needle, leakage, broken pen)? Please also send a photo of the damaged pen via email so our team can resolve this quickly."
+  → "I'm sorry to hear your pen was damaged. Could you let me know what specifically appears damaged (bent needle, leakage, broken pen)? Please also send a photo of the damaged pen via email so our team can arrange next steps for you."
   → ⚠️ NEVER promise or imply replacement
 
 ---

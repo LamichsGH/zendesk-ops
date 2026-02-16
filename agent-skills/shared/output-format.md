@@ -37,11 +37,11 @@ Related articles:
 
 ## Closing + SLA by Route
 
-**SOLVE (0.90+):**
+**SOLVE (0.85+):**
 - Close: "I hope this helps! If you have any other questions, just reply to this email."
 - No SLA needed
 
-**MONITOR (0.60-0.89):**
+**MONITOR (0.60-0.84):**
 - Close: "Once you let me know [X], I'll be able to help you further."
 - **DO NOT** mention "I've passed to the team" - YOU are waiting for customer reply
 - No SLA (ticket goes to Pending, not to team yet)

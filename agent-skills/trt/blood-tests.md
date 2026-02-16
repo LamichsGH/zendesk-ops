@@ -56,7 +56,7 @@ IF days_since_shipped 4–7:
   → "Your kit was shipped on [date] and delivery can occasionally take up to 5 working days. You can track the latest status here: [Royal Mail tracking link]. If it hasn't arrived by [shipped_date + 7 days], let us know and we'll get a replacement sent out."
 
 IF days_since_shipped 8–14:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → "This is taking longer than expected. I've flagged this with our team to investigate and arrange a replacement if needed."
 
 IF days_since_shipped > 14:
@@ -64,7 +64,7 @@ IF days_since_shipped > 14:
   → "I'm sorry this hasn't arrived. I've escalated this urgently to get a replacement sent to you as soon as possible."
 
 IF days_since_shipped is unknown or no order data:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
 
 ### Worked Example
 Patient says "Not received my test kit" on 15 Feb. Order shows shipped 10 Feb. Tracking: OL339568731GB.
@@ -178,7 +178,7 @@ IF transit delay caused the failure (>96 hours) and was NOT the patient's fault:
 
 IF patient questions result dates or validity:
   → Check order history for previous failed tests — there may be a history of failures
-  → confidence = 0.75 (ESCALATE) if multiple failures detected
+  → confidence = 0.55 (ESCALATE) if multiple failures detected
 
 ## Premature / Incorrect Automated Emails
 
@@ -190,14 +190,14 @@ IF patient received an "ineligible" email but results aren't visible in portal:
 
 IF patient received contradictory automated messages:
   → Acknowledge the confusion, explain likely system timing issue
-  → confidence = 0.75 (ESCALATE) if genuinely conflicting information
+  → confidence = 0.55 (ESCALATE) if genuinely conflicting information
 
 ## Results Format Requests
 
 IF patient asks for PDF/downloadable/printable results:
   → confidence = 0.85 (SOLVE)
   → Call get_prescription_copy or search KB for how to share results
-  → "I can arrange for a PDF copy of your results to be sent to you."
+  → "I can request a PDF copy of your results to be sent to you."
   → Do NOT default to "check the portal" if they specifically asked for a PDF
 
 IF patient wants to share results with GP:
@@ -205,13 +205,13 @@ IF patient wants to share results with GP:
   → Explain which markers are included
 
 IF patient asks for specific numbers/values:
-  → confidence = 0.75 (ESCALATE)
+  → confidence = 0.55 (ESCALATE)
   → Escalate for team to retrieve and share specific result values
 
 ## External Results Acceptance
 
 IF patient wants to submit GP/NHS/external blood test results:
-  → confidence = 0.75 (ESCALATE to clinical team)
+  → confidence = 0.55 (ESCALATE to clinical team)
   → But provide this guidance first:
     1. Results must be within 6 months (older results are not accepted)
     2. Accepted formats: unredacted PDF, photo of original lab report. NOT screenshots of patient portals.
