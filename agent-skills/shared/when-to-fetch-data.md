@@ -36,6 +36,25 @@ This guide tells you when to use each backend data tool. Only fetch data when th
 - Customer's question doesn't relate to account actions
 - Simple informational queries
 
+## Get Answered Questionnaire
+**Use when customer asks about:**
+- Order approval status (clinical review stage)
+- Why their order hasn't been approved yet
+- "Where is my order?" when order is still pending approval
+- Tasks blocking their order
+
+**Do NOT fetch when:**
+- Order is already shipped or delivered (use Get Order History instead)
+- Customer is asking about subscription, billing, or cancellation
+- Question is about general info, policies, or processes
+- Patient is NOT on the weight loss pathway
+
+**How to use with Get Order History:**
+- Always call Get Order History FIRST to identify the order in progress
+- Then call Get Answered Questionnaire to get the clinical approval status
+- Match the AQ to the order by order number
+- The AQ status is the source of truth for approval stage (NOT the order status from Get Order History)
+
 ## General Rules
 - If in doubt, fetch the data - it's better to have context than to miss something
 - For refund/complaint tickets, fetch Order History to understand the situation
