@@ -47,11 +47,29 @@ IF patient missed a consultation appointment:
 
 IF patient missed a Randox blood test clinic appointment:
   → confidence = 0.85 (SOLVE)
-  → "You can reschedule your Randox appointment through their portal using your booking code. If you don't have your code, let me know and I'll get our team to retrieve it for you."
+  → "You can reschedule your Randox appointment through their portal using your booking code. If you don't have your booking code, I've also flagged this with our team so they can retrieve it and assist you."
 
 IF patient missed a nurse home visit:
   → confidence = 0.55 (ESCALATE)
   → "I've flagged this with our team and they'll arrange a new nurse visit for you."
+
+## Consultation Rescheduling (Self-Serve)
+
+IF patient wants to reschedule their consultation:
+  → confidence = 0.90 (SOLVE)
+  → Provide self-serve steps:
+    1. Go to the **Home** tab in the app
+    2. Find the appointment under the **Upcoming** banner
+    3. Tap **Reschedule**
+    4. Select a new date and time
+    5. Fill in the details and tap **Update Event**
+
+IF patient wants to cancel their consultation:
+  → confidence = 0.90 (SOLVE)
+  → Provide self-serve steps:
+    1. Go to the **Home** tab in the app
+    2. Find the appointment under the **Upcoming** banner
+    3. Tap **Cancel**
 
 ## Post-Results Journey ("What Happens Next?")
 
@@ -65,11 +83,59 @@ IF patient has completed both tests and asks "what next?":
   → "Both your blood tests are complete. The next step is to book your consultation with one of our specialist clinicians."
   → Check if pre-consultation tasks are complete
   → Provide consultation cost (£79.95) and booking instructions from portal
+  → Consultation booking links (use based on subscription status):
+    - Existing patients (active subscription): [Book your follow-up consultation](https://calendly.com/trt-doctors/follow-up-consultation)
+    - New patients (no active subscription): [Book your new patient consultation](https://calendly.com/trt-doctors/new-patient-consultation)
 
 IF patient has had their consultation and asks "what next?":
   → confidence = 0.85 (SOLVE)
   → "After your consultation, if TRT is recommended, you'll be set up with a treatment plan and subscription. Your clinician will have outlined the next steps during your consultation."
   → If they seem unclear, escalate for clinical team follow-up
+
+## Webinar Pathway
+
+Some patients may be offered a free educational webinar before their paid consultation. This is a separate event from the clinical consultation.
+
+IF patient asks about a webinar booking or joining link:
+  → confidence = 0.85 (SOLVE)
+  → "Your webinar confirmation and joining link would have been sent to you by email when you signed up. Please check your inbox, including junk/spam folders, for the confirmation."
+
+IF patient says they missed a webinar:
+  → confidence = 0.55 (ESCALATE)
+  → "I'm sorry you missed the webinar. I've passed this to our team — they'll be able to send you a recording of the session."
+  → Include in internal_note: which webinar, when it was scheduled (if known)
+
+IF patient asks what the webinar covers:
+  → confidence = 0.90 (SOLVE)
+  → "The webinar is a free educational session that covers the TRT treatment journey, what to expect, and answers common questions. It's separate from your clinical consultation."
+
+## Blood Test Appointments (Clinic vs Nurse)
+
+⚠️ This section covers APPOINTMENT queries for blood test clinic/nurse visits. For blood test KIT queries (delivery, results, etc.), see blood-tests.md.
+
+### Appointment Types
+- **Clinic visit (Randox)**: Patient books and visits a partner clinic. Clinic has all supplies — patient just brings ID.
+- **Nurse home visit**: Nurse comes to the patient's home with all supplies.
+- **Kit-based**: Patient receives a kit at home and either self-collects or books a separate clinic visit.
+
+### Appointment Visibility
+Patients can view their past and upcoming appointments in the **Home** tab of their app, showing appointment address, scheduled time, and duration.
+
+### Price Matching Rule
+⚠️ Only mention this if the patient brings it up: If the patient's nearest clinic is more than 6 miles away, the nurse home visit price may be matched to the clinic visit price. Do NOT proactively mention this — only confirm if the patient raises the distance issue.
+
+### Rescheduling Blood Test Appointments
+
+IF patient wants to reschedule a clinic or nurse appointment:
+  → confidence = 0.55 (ESCALATE)
+  → Gather: preferred new date, whether they want to keep the same type (clinic/nurse), any other changes
+  → "I've passed your rescheduling request to our team with the details you've provided. They'll arrange this for you."
+  → Include in internal_note: current appointment type, requested changes
+
+IF patient wants to cancel a blood test appointment:
+  → confidence = 0.55 (ESCALATE)
+  → ⚠️ We cannot cancel clinic/nurse appointments on the patient's behalf — but the team can assist
+  → "I've flagged your cancellation request with our team. They'll confirm the cancellation and advise on next steps."
 
 ## Check-In Consultations (Existing Patients)
 

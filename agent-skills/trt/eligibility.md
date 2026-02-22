@@ -3,6 +3,45 @@
 ## Scope
 This file covers eligibility questions, ineligibility handling, self-medicating patient onboarding, and result validity. Use when patient asks about eligibility, receives an ineligible result, or is self-medicating and wants to join the clinic.
 
+## Pre-Screening Red Flags (CHECK FIRST)
+
+⚠️ These are HARD STOPS. If ANY of these apply, the patient is NOT eligible for TRT. These override all other eligibility criteria.
+
+IF patient is under 18 years old:
+  → confidence = 0.35 (ESCALATE, send_response = false)
+  → safety_flags: ["underage_patient"]
+  → "Unfortunately, our TRT service is only available to patients aged 18 and over."
+
+IF patient resides outside mainland UK:
+  → confidence = 0.35 (ESCALATE, send_response = false)
+  → safety_flags: ["location_ineligible"]
+  → "Our TRT service is currently only available to patients based in mainland UK."
+
+IF patient has active prostate, breast, or liver cancer:
+  → confidence = 0.35 (ESCALATE, send_response = false)
+  → safety_flags: ["cancer_contraindication"]
+  → Do NOT provide any clinical reasoning. Simply: "Based on what you've mentioned, I've passed your query to our clinical team who will be best placed to advise you."
+
+IF patient has severely high or uncontrolled blood pressure:
+  → confidence = 0.35 (ESCALATE, send_response = false)
+  → safety_flags: ["uncontrolled_bp"]
+  → Do NOT list specific BP thresholds. Simply: "Because you've mentioned some existing conditions, I've passed this to our clinical team to review and advise on the best options for you."
+
+⚠️ For cancer and blood pressure flags: follow the Clinical Tone Rule from tone-and-formatting.md — keep responses reassuring and general. Do NOT list specific contraindications or explain WHY these conditions are exclusions.
+
+### Detecting Red Flags in Email Context
+Since the patient won't explicitly answer screening questions in a single email, look for these signals:
+- Age mentions: "I'm 17", "my son wants to...", school/college context
+- Location: Non-UK addresses, mentions of other countries, international phone formats
+- Medical history mentions: "I have prostate cancer", "being treated for...", "currently undergoing chemo"
+- BP mentions: "my blood pressure is very high", "uncontrolled hypertension"
+
+IF red flag signals are ambiguous (e.g., unclear age, might be UK-based):
+  → Do NOT assume ineligibility
+  → confidence = 0.70 (MONITOR)
+  → Ask ONE clarifying question: "Just to confirm, are you based in the UK and over 18?"
+  → awaiting_customer_input = true
+
 ## Hard Eligibility Rules
 
 ### Total Testosterone Threshold
@@ -59,6 +98,20 @@ IF patient is currently self-administering TRT and wants to join the clinic:
     4. After baseline is established, the clinical team will create a proper treatment plan
   → "I've passed your details to our clinical team. To get you set up properly, they'll need to discuss the onboarding process with you — this includes establishing a baseline reading."
   → Do NOT specify the exact washout duration (this is clinician-determined)
+
+### Switching from Another Provider
+
+IF patient is currently with another TRT provider (NHS, private GP, or international clinic) and wants to switch:
+  → confidence = 0.55 (ESCALATE)
+  → Key information to provide:
+    1. If NOT currently enrolled with their provider: must provide blood test results from previous provider
+    2. If currently enrolled: must provide a treatment letter containing:
+       - Exact name of TRT medication
+       - Prescribed doses (with prescribing doctor's details and registration number)
+       - PDF copies of blood test results
+       - Start and end dates of treatment
+    3. All evidence must be shared in PDF format via email
+  → "I've passed your details to our clinical team. They'll review your previous treatment history and advise on the onboarding process."
 
 IF patient asks about discontinuation protocol (how to safely stop self-medication):
   → confidence = 0.55 (ESCALATE)

@@ -14,6 +14,40 @@ How to tell the difference:
 - Use tracking data from patient context — NEVER fabricate tracking codes
 - Format tracking as clickable link: [Track your delivery](URL)
 
+## ⚠️ CRITICAL: Payment ≠ Medication Dispatch
+
+**This is one of the most common sources of patient confusion for TRT orders.**
+
+Subscription payments do NOT automatically trigger medication dispatch. The relationship between payment and orders depends on the medication type:
+
+**Auto-dispatch medications (payment = order):**
+- **Tadalafil** — automatically renewed and dispatched monthly
+- **Statin medication** — automatically renewed and dispatched monthly
+
+**Manual-order medications (payment ≠ order):**
+- **Testosterone Cypionate** — patient must manually place order via the app
+- **Sustanon** — patient must manually place order via the app
+- **HCG** — patient must manually place order via the app
+- **Testosterone Cream** — patient must manually place order via the app
+- **Clomifene** — patient must manually place order via the app
+- **Anastrozole / Exemestane / Tamoxifen** — patient must manually place order via the app
+
+### How to Detect This Issue
+IF patient says "I've paid but haven't received my medication" AND they are on a manual-order medication:
+  → confidence = 0.85 (SOLVE)
+  → The patient likely paid their subscription but hasn't placed a medication order
+  → "I can see your subscription payment has gone through. For [medication name], you'll need to place your order through the app to trigger the dispatch. Here's how:
+    1. Open the Voy app and go to the **Plan** tab
+    2. In the 'Running low on medication' section, tap **Order now**
+    3. Select the medication and consumables you need
+    4. Tap **Go to order recap**, confirm details, and tap **Place your order**"
+  → "Once you've placed the order, it will go through clinical review and you'll receive a tracking link once it's dispatched."
+
+IF patient asks when to reorder:
+  → Use the expected duration data from get_order_history to estimate when they'll run low
+  → This is guidance, not a strict timeline — remind them to reorder when running low
+  → "Based on your current dosage and last order, you might want to reorder around [estimated date]. You can do this anytime through the app."
+
 ## Medication Delivery SLA Decision Tree
 
 ⚠️ REMINDER: This tree is for MEDICATION only. Blood test kits have their own SLA in blood-tests.md.
@@ -62,6 +96,20 @@ IF no pending order (general address update):
   → confidence = 0.55 (ESCALATE)
   → "I've passed your address update to our team."
 
+## Self-Serve Order Tracking
+
+IF patient asks how to check their order status and you don't have specific order data issues to address:
+  → confidence = 0.90 (SOLVE)
+  → Provide self-serve instructions:
+    1. Open the Voy app and go to the **Plan** tab
+    2. Select **Track Delivery** for the relevant order
+    3. Possible statuses:
+       - **Awaiting Approval** — clinical review in progress (usually 1–2 days)
+       - **Approved** — cleared for dispatch, being prepared for shipping
+       - **Dispatched** — with Royal Mail, in transit
+       - **Delivered** — successfully delivered
+    4. Click the tracking link in the app for real-time Royal Mail updates
+
 ## Patient Status Detection
 
 **EXISTING patient signals:**
@@ -86,3 +134,16 @@ IF existing patient asks to buy a blood test:
 - HCG may ship separately from testosterone
 - Requires cold chain — if patient asks about HCG delivery timing, mention it may arrive in a separate package
 - HCG storage: MUST be refrigerated (2–8°C) after mixing
+
+## Medication Duration Reference
+
+Use this to help patients understand when they might need to reorder:
+- **Testosterone Cypionate**: 3–4 months per vial (depending on dosage)
+- **Sustanon**: 3–4 months per supply (depending on dosage)
+- **Testosterone Cream**: ~1 month per tube
+- **HCG**: 4–6 weeks (depending on dosage)
+- **Clomifene**: ~1 month (depending on dosage)
+- **Tadalafil**: 1 month (auto-dispatched)
+- **Anastrozole / Exemestane / Tamoxifen**: ~4 months (depending on dosage)
+
+⚠️ These are estimates. Always refer to get_order_history for patient-specific reorder timing.

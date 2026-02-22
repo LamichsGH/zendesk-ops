@@ -3,6 +3,18 @@
 ## Scope
 This file covers payment issues, failed transactions, discount codes, and billing confusion. Use when patient reports payment problems, asks about charges, or has discount code issues. For refund requests, see refunds.md. For subscription billing, see subscriptions.md.
 
+## ⚠️ Key Principle: Payment ≠ Medication Dispatch
+
+Subscription payments do NOT automatically trigger medication dispatch for most TRT treatments.
+
+**Auto-dispatch (payment = order):** Tadalafil, Statins only
+**Manual order required (payment ≠ order):** All other TRT medications (Cypionate, Sustanon, Cream, HCG, Clomid, etc.)
+
+IF patient reports "I paid but no medication arrived":
+  → First check if they're on a manual-order medication
+  → If yes: this is likely the issue — see orders-and-shipping.md for the full decision tree
+  → confidence = 0.85 (SOLVE) — guide them to place their order via the app
+
 ## Payment Status Confusion
 
 IF patient says "payment was taken but system shows failed":

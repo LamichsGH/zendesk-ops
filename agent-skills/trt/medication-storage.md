@@ -71,7 +71,7 @@
 ## Storage Questions — Decision Tree
 
 **"I left my testosterone out in the heat / cold":**
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
   → Search KB for temperature excursion guidance
   → General rule: brief exposure (a few hours) is usually fine
   → If exposed to extreme heat (>30C) or freezing for an extended period: confidence = 0.55, ESCALATE to clinical team: "Please don't use this until the clinical team has confirmed it's safe."
@@ -103,6 +103,9 @@
 
 ## Travel — Decision Tree
 
+### Travel Planning Timeline
+⚠️ If the patient is planning to travel, recommend requesting any needed documentation (prescription copies, travel letters) at least **14 days before departure** to allow processing time.
+
 ### General Travel Guidance
 - Recommend ordering treatment at least 14 days before departure
 - If patient needs a temporary address change for travel: remind them to update their address BEFORE their order is approved. Once approved, address changes are not possible.
@@ -120,29 +123,29 @@
 ### International Travel
 
 **Patient travelling internationally — by medication type:**
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
   → Always carry in hand luggage with prescription/travel letter
 
 **Cypionate:**
   → Medication + injection supplies in hand luggage
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
 
 **Sustanon:**
   → Take 1-2 ampoules depending on trip duration
   → Draw up once arrived at destination
   → ⚠️ CANNOT bring pre-drawn syringes on a plane
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
 
 **HCG — Long Flight:**
   → Take powder vial + diluent vial unmixed
   → Mix at destination
   → Keep in fridge after mixing
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
 
 **HCG — Short Flight:**
   → Use cool packs to keep cool during transit
   → ⚠️ Voy cannot provide a cooling pouch
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
 
 **Clomid / Cream / Tadalafil / AIs / Statins:**
   → Hand luggage is fine; no special temperature requirements
@@ -152,10 +155,10 @@
 
 **Patient asks for a travel letter:**
   → confidence = 0.55 (ESCALATE to CS)
-  → Collect travel dates + destination from the patient
-  → Escalate to customer service team to arrange the travel letter
   → ⚠️ Agent cannot provide travel letters directly — must escalate to CS
-  → "I'll pass your travel dates and destination to our customer service team so they can arrange a travel letter for you."
+  → Include any travel dates/destination the patient has already mentioned in the internal note
+  → "I've passed this to our customer service team so they can arrange a travel letter for you. They'll be in touch within 24-48 hours to confirm the details."
+  → internal_note: include travel dates and destination if provided by the patient in their email
 
 ### Prescription Copies
 
@@ -170,7 +173,7 @@
 ## Sharps Disposal — Decision Tree
 
 **"How do I dispose of needles / sharps bin?":**
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
   → All TRT patients receive a sharps bin as part of their treatment for safe disposal of needles, syringes, glass ampoules, or anything broken
   → When the sharps bin is full, patients can dispose via three options:
 
@@ -179,7 +182,7 @@
     → Advise patient to confirm availability with their local pharmacy in advance
 
   **Option 2 — Council Collection (FREE):**
-    → Arrange via: https://www.gov.uk/request-clinical-waste-collection
+    → Arrange via: [GOV.UK clinical waste collection](https://www.gov.uk/request-clinical-waste-collection)
     → Patient needs a "Patient Letter" to provide to the council
     → ⚠️ Customer service CANNOT contact the patient's council on their behalf — the patient must arrange this directly and provide the council with the necessary documentation
 
@@ -188,7 +191,7 @@
     → Availability varies by surgery
 
 **"I need a new sharps bin":**
-  → confidence = 0.85 (INFORM/REASSURE)
+  → confidence = 0.85 (SOLVE)
   → Voy provides replacement sharps bins — escalate to CS to order one
   → ⚠️ Only mention that the sharps bin is free if the patient specifically asks about cost
   → "I've flagged this with our team and they'll arrange a replacement sharps bin for you."
@@ -215,15 +218,15 @@
 ### Example 2: Patient travelling internationally with Sustanon
 > **Patient:** "I'm flying to Spain next month and I'm on Sustanon. How do I take it with me?"
 >
-> **Agent action:** confidence = 0.85 (INFORM/REASSURE). Collect travel dates + destination for travel letter.
-> **Response:** "For Sustanon, take 1-2 ampoules in your hand luggage depending on how long your trip is, and draw up once you've arrived. Please note you can't bring pre-drawn syringes on the plane. I'd also recommend ordering your treatment at least 14 days before departure. I can arrange a travel letter for you — could you confirm your travel dates and destination?"
-> **Follow-up:** Escalate to CS with travel dates and destination to arrange travel letter.
+> **Agent action:** confidence = 0.85 (SOLVE) for storage/travel guidance. ESCALATE (0.55) for travel letter arrangement.
+> **Response:** "For Sustanon, take 1-2 ampoules in your hand luggage depending on how long your trip is, and draw up once you've arrived. Please note you can't bring pre-drawn syringes on the plane. I'd also recommend ordering your treatment at least 14 days before departure. I've also passed your details to our customer service team so they can arrange a travel letter for your trip to Spain — they'll be in touch to confirm the details."
+> **Internal note:** "Patient travelling to Spain next month on Sustanon. Needs travel letter. CS to confirm exact dates and arrange letter."
 
 ### Example 3: Patient needs to dispose of a full sharps bin
 > **Patient:** "My sharps bin is full, what do I do with it?"
 >
 > **Agent action:** confidence = 0.85 (INFORM/REASSURE)
-> **Response:** "There are a few options for disposing of a full sharps bin: you can drop it off at your local pharmacy (worth calling ahead to check they accept them), arrange a free council collection at https://www.gov.uk/request-clinical-waste-collection, or check with your GP surgery. For the council collection, you'll need to provide them with a Patient Letter. Would you also like me to request a replacement sharps bin from our team?"
+> **Response:** "There are a few options for disposing of a full sharps bin: you can drop it off at your local pharmacy (worth calling ahead to check they accept them), arrange a [free council collection](https://www.gov.uk/request-clinical-waste-collection), or check with your GP surgery. For the council collection, you'll need to provide them with a Patient Letter. Would you also like me to request a replacement sharps bin from our team?"
 
 ### Example 4: Medication left in a hot car
 > **Patient:** "I left my testosterone in the car and it was really hot today — is it still safe?"
@@ -235,5 +238,19 @@
 ### Example 5: Patient asks for a travel letter
 > **Patient:** "I need a letter for my medication for when I fly."
 >
-> **Agent action:** confidence = 0.55 (ESCALATE to CS). Collect travel dates + destination.
-> **Response:** "I can help with that. Could you let me know your travel dates and destination? I'll pass those details to our customer service team and they'll arrange a travel letter for you."
+> **Agent action:** confidence = 0.55 (ESCALATE to CS).
+> **Response:** "I've passed this to our customer service team and they'll arrange a travel letter for you. They'll be in touch within 24-48 hours to confirm the details."
+> **Internal note:** "Patient requesting travel letter for flying. CS to contact patient for travel dates and destination, then arrange letter."
+
+---
+
+## Sharps Disposal
+
+IF patient asks about disposing of needles or sharps:
+  → confidence = 0.90 (SOLVE)
+  → "Used needles and sharps should be placed in a proper sharps bin. Once the bin is full, you have a few options for safe disposal:
+    - **Local pharmacy** — most pharmacies accept full sharps bins for free
+    - **Council collection** — contact your local council for a sharps bin collection service (usually free)
+    - **GP surgery** — some GP surgeries accept sharps bins"
+  → "You can usually get a free replacement sharps bin from your pharmacy or GP at the same time."
+  → Do NOT advise putting sharps in regular household waste

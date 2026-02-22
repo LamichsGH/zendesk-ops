@@ -228,8 +228,9 @@ IF patient asks about rescheduling a Randox clinic appointment:
 ### Expired Kit Confusion
 IF patient says their kit is expired:
   → Common confusion: manufacturing date vs expiry date on the label
-  → confidence = 0.85 (SOLVE)
-  → Ask: "Could you send us a photo of the label? Sometimes the date shown is the manufacturing date rather than the expiry date."
+  → confidence = 0.75 (MONITOR)
+  → awaiting_customer_input = true
+  → "Sometimes the date on the label is the manufacturing date rather than the expiry date. Could you send us a photo of the label so we can check? Once we can see the label, we'll confirm whether the kit is still fine to use."
   → Do NOT immediately send a replacement — verify first
 
 ## Kit Contents & Return Packaging
@@ -272,6 +273,12 @@ IF results show NaN, missing values, or error messages:
 
 IF transit delay caused the failure (>96 hours) and was NOT the patient's fault:
   → Apologise: "I'm sorry about this — it appears the sample took longer than expected to reach the lab, which was outside your control."
+
+### Test Failure Empathy Script
+When communicating about ANY test failure, lead with empathy:
+→ "I'm really sorry to hear that your sample couldn't be processed. I understand how frustrating it is to prepare for the test and then have to repeat it."
+→ Then explain next steps (escalation for replacement, or offer venous alternative)
+→ Do NOT try to diagnose the specific failure reason — escalate for the team to investigate
 
 IF patient questions result dates or validity:
   → Check order history for previous failed tests — there may be a history of failures
@@ -333,11 +340,101 @@ IF patient asks what happens after results:
   → After both tests confirm low T → book a paid consultation (search KB for consultation pricing)
   → The consultation is with a specialist clinician who reviews all results
 
+## Biomarker Glossary
+
+IF patient asks what a specific biomarker means:
+  → confidence = 0.90 (SOLVE)
+  → Provide ONLY the definition(s) the patient asks about — do NOT list all biomarkers
+  → Add footer: "For a detailed analysis of what your results mean for you personally, this is best discussed during your consultation."
+
+⚠️ You CANNOT interpret the patient's specific numeric results. Only provide generic definitions.
+
+**Hormones:**
+- **Total Testosterone**: A measure of the active amount of testosterone in your body.
+- **Free Testosterone**: A measure of the testosterone in your body that is not attached to SHBG or Albumin — the portion available for your body to use.
+- **Oestradiol (E2)**: In TRT context, oestradiol is made when testosterone converts via the enzyme aromatase.
+- **Prolactin**: A hormone released by the pituitary gland that influences other hormones including oestrogen and testosterone.
+- **FSH (Follicle Stimulating Hormone)**: Controls sperm production, linked to the pituitary gland.
+- **LH (Luteinising Hormone)**: Initiates testosterone production in the testes, linked to the pituitary gland.
+- **SHBG (Sex Hormone Binding Globulin)**: A protein made in the liver that binds to sex hormones, preventing them from being used in tissue.
+
+**Thyroid:**
+- **TSH (Thyroid Stimulating Hormone)**: Produced by the pituitary gland, tells the thyroid how much thyroid hormone to make.
+- **Free T4**: A measure of available thyroxine in your blood.
+
+**Blood Count & Cells:**
+- **Haemoglobin**: A protein in red blood cells that carries oxygen from lungs to the rest of the body.
+- **HCT (Haematocrit)**: Measurement of how much of your blood is made up of red blood cells.
+- **Platelets**: Cell fragments that help stop bleeding by aiding blood clotting.
+- **White Blood Cells**: Cells that help fight infections and diseases.
+- **Red Blood Cells**: Cells that carry oxygen from lungs to the body.
+- **MCV (Mean Corpuscular Volume)**: Average size of red blood cells.
+- **Neutrophils**: Most common white blood cell; first responders to bacterial and fungal infections.
+- **Lymphocytes**: White blood cells that form the backbone of specific immune response.
+- **Monocytes**: Largest white blood cell type; detects and destroys pathogens and cellular debris.
+- **Basophils**: Least common white blood cell; involved in allergic and inflammatory responses.
+- **Eosinophils**: White blood cells that fight parasitic infections and manage allergic reactions.
+
+**Organ Function:**
+- **eGFR (estimated Glomerular Filtration Rate)**: Estimate of how well kidneys filter blood.
+- **ALT (Alanine Transaminase)**: Enzyme made by the liver.
+- **GGT (Gamma-glutamyl Transferase)**: Enzyme made by the liver.
+- **ALP (Alkaline Phosphatase)**: Enzyme made by the liver.
+- **PSA (Prostate-specific Antigen)**: A protein made by the prostate gland.
+- **Creatinine**: Waste product from muscles, filtered by kidneys.
+- **Urea**: Waste product from protein breakdown in the liver, filtered by kidneys.
+- **Total Bilirubin**: Measure of waste produced by the liver.
+- **Albumin**: A protein made in the liver.
+- **Ferritin**: A protein that stores and releases iron — indicates iron levels in blood.
+- **HbA1c**: Measure of average blood sugar over the last 2–3 months.
+
+**Cholesterol/Lipids:**
+- **Total Cholesterol**: Total cholesterol in the body, from the liver and dietary intake.
+- **LDL Cholesterol**: Carries cholesterol to cells; excess builds up as plaque in arteries.
+- **HDL Cholesterol**: Picks up excess cholesterol and returns it to the liver for removal.
+- **Cholesterol/HDL Ratio**: Formula to help establish heart disease risk.
+
+**Test Groups:**
+- **Full Blood Count (FBC)**: Includes Red Blood Cells, White Blood Cells, Platelets, Haemoglobin, Haematocrit, MCV, and differential white cell counts.
+- **Liver Function Test (LFT)**: Measures liver health — includes Albumin, ALP, ALT, GGT, and Bilirubin.
+
+## 6-Week Blood Tests
+
+IF patient asks about the 6-week blood test:
+  → confidence = 0.90 (SOLVE)
+
+**What it is:**
+- A finger-prick test provided after the 5-week survey shows lack of treatment benefit or mild side effects, OR if explicitly recommended during consultation
+- Free of charge (no extra cost)
+- Dispatched within 48 hours of order confirmation, tracked via Royal Mail
+
+**Biomarkers tested:** Testosterone, Free Testosterone, Oestradiol, LH, FSH, SHBG, Albumin
+
+**Timing (CRITICAL):**
+- Complete the test the **same morning** as the day the dose is due
+  - Example: if dose is Monday afternoon, do the blood test Monday morning
+  - This measures "trough" levels — when medication effect is lowest
+- If on Topical Testosterone (cream): test **12 hours after** last application
+- Avoid ejaculation, strenuous exercise, or long cycle rides for at least 48 hours before
+- Stay well hydrated before the test
+- Post early in the week (Monday–Wednesday) for faster lab processing
+- Write date and time on the vial label, return in the prepaid envelope the same day
+
+**Kit contents:** Pamphlet, blood tube(s), lancets, alcohol wipes, saline wipes, plasters, transport pouch, return envelope
+
+**If the 6-week test fails or patient struggles:**
+  → confidence = 0.55 (ESCALATE)
+  → Two options:
+    1. Complete the 6-week test venously (escalate for team to arrange)
+    2. Wait until the monitoring blood test at the 3-month mark
+
 ## Blood Test Timing
 
 **Age-dependent rules:**
-- Under 40: Timing is flexible within the appointment/collection window
-- Over 40: Ideally collect before 10am for most accurate testosterone readings
+- Under 40: Must complete the blood test **before 11am** for accurate readings
+- Over 40: Must complete the blood test **before 2pm** for accurate readings
+
+⚠️ These are timing requirements, not suggestions. Results collected outside these windows may not give accurate testosterone readings.
 
 **Illness impact:**
 - If patient has been ill recently (flu, cold, infection): advise waiting until fully recovered
@@ -371,6 +468,14 @@ IF patient mentions a clinic appointment, doctor appointment, or time pressure:
   - If existing patient asks to buy a blood test: explain monitoring tests are free, escalate if needed
 
 ⚠️ Saliva tests are NOT accepted for the TRT pathway. Only blood tests.
+
+**Monitoring schedule (for existing patients):**
+- 6-week test (if triggered by 5-week survey or clinician recommendation)
+- 3-month monitoring blood test
+- 6-month monitoring blood test
+- 12-month monitoring blood test
+- Every 6 months thereafter
+- Nurse home visit for monitoring: additional £35
 
 ## Replacement Kit Rules
 
