@@ -40,7 +40,7 @@ This file covers all pre-order tasks that patients must complete before their me
 ## ID Verification
 
 IF patient asks about ID verification:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
 
 **Why it's needed:**
 → "We need to verify your identity to comply with prescription medication regulations and to provide a safe service."
@@ -73,7 +73,7 @@ IF patient has only international documents not listed above:
 ## BMI Picture Verification
 
 IF patient asks about BMI picture requirements:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
 
 **Why it's needed:**
 → "We need to verify your BMI alongside your ID to comply with prescription medication regulations."
@@ -93,7 +93,7 @@ IF patient asks about BMI picture requirements:
 ⚠️ Please upload through the task in the app, not through the chat."
 
 IF patient is uncomfortable submitting a photo:
-  → confidence = 0.85 (INFORM — offer alternative)
+  → confidence = 0.85 (SOLVE — offer alternative)
   → "I understand this can feel uncomfortable. We offer an alternative: a short video BMI verification call that takes less than 5 minutes. Would you like me to provide the link for that instead?"
   → Proceed to Video BMI Verification section
 
@@ -102,7 +102,7 @@ IF patient is uncomfortable submitting a photo:
 ## Video BMI Verification
 
 IF patient prefers video verification or cannot submit a photo:
-  → confidence = 0.85 (INFORM)
+  → confidence = 0.85 (SOLVE)
 
 → "You can complete your BMI verification via a short video call instead of submitting a photo. The call typically takes less than 5 minutes."
 
@@ -112,11 +112,11 @@ IF patient prefers video verification or cannot submit a photo:
 ⚠️ Agent CANNOT confirm or deny a patient's attendance to a BMI verification call. Always ask the patient if they've attended.
 
 IF patient says they already attended:
-  → confidence = 0.88 (REASSURE)
+  → confidence = 0.88 (SOLVE)
   → "Great, no further action is needed from your side. The results will be reviewed by our clinical team."
 
 IF patient says they have NOT attended:
-  → confidence = 0.85 (INFORM)
+  → confidence = 0.85 (SOLVE)
   → Provide the Open Room video verification link
   → "The call should take less than 5 minutes."
 
@@ -127,7 +127,7 @@ IF patient says they have NOT attended:
 ## Proof of Previous Prescription
 
 IF patient has a "proof of previous prescription" task:
-  → confidence = 0.88 (INFORM)
+  → confidence = 0.88 (SOLVE)
 
 **Why it's needed:**
 → "Patients who wish to start treatment at a higher dose need to provide proof of a recent prescription from a previous provider. This confirms treatment continuity."
@@ -155,7 +155,7 @@ IF no task is visible in the app:
 ## Weight Reading
 
 IF patient has a "weight reading" task:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → "You're required to provide a recent weight reading to continue your treatment. You can submit this through the task in your app (Home tab)."
 
 ---
@@ -163,12 +163,12 @@ IF patient has a "weight reading" task:
 ## First Order Billing
 
 IF patient asks about first order charges or billing:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
 
 → "For first orders, the payment amount is reserved on your card when you place the order. Your card is only charged after the order is approved by our clinical team."
 
 IF patient asks about what happens if the order is not approved:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → "If your order is not approved, the reserved amount will be released back to your account within 7 business days."
 
 ---
@@ -177,20 +177,20 @@ IF patient asks about what happens if the order is not approved:
 
 **Example 1: ID verification question**
 Patient: "What ID do I need to upload?"
-→ confidence = 0.90 (INFORM)
+→ confidence = 0.90 (SOLVE)
 → "You can upload any valid photo ID that shows your full name, date of birth, and a photo. This includes a passport, driving licence (including provisional), Blue Badge, PASS card, biometric immigration document, MoD Form 90, or an EEA national identity card. Please upload it through the task in your Home tab, not through the chat."
 
 **Example 2: BMI photo concerns**
 Patient: "I don't feel comfortable sending a full body photo."
-→ confidence = 0.85 (INFORM — offer alternative)
+→ confidence = 0.85 (SOLVE — offer alternative)
 → "I completely understand. We offer a video BMI verification call as an alternative — it takes less than 5 minutes and you'll speak with a member of our team. Would you like me to provide the link?"
 
 **Example 3: Proof of prescription requirements**
 Patient: "I was on Wegovy 1.7mg with another provider. What do I need to provide?"
-→ confidence = 0.88 (INFORM)
+→ confidence = 0.88 (SOLVE)
 → "To start at a higher dose, you'll need to upload proof of your previous prescription. The prescription must be from within the last 8 weeks and clearly show your full name, the approval date, medication name (Wegovy), and the dose strength (1.7mg). All of these details are required. You can upload this through the task in your Home tab."
 
 **Example 4: First order billing concern**
 Patient: "I was charged but my order hasn't been approved yet."
-→ confidence = 0.90 (INFORM)
+→ confidence = 0.90 (SOLVE)
 → "For first orders, the payment amount is reserved on your card when you place the order, but you're only fully charged once the clinical team approves it. If the order isn't approved, the reserved amount will be released within 7 business days."

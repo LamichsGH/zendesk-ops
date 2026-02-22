@@ -34,7 +34,7 @@ This file covers all weight loss medication usage instructions, pen operation, f
 
 ⚠️ ALWAYS direct patients to in-app videos first before providing written instructions.
 
-→ confidence = 0.92 (INFORM)
+→ confidence = 0.92 (SOLVE)
 → "You can access step-by-step video instructions in the Voy app:
 1. Open the Voy app
 2. Go to the **Plan** tab
@@ -46,7 +46,7 @@ This file covers all weight loss medication usage instructions, pen operation, f
 ## Wegovy (FlexTouch) Injection Instructions
 
 IF patient asks how to use Wegovy:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
 
 **Key facts:**
 - Multi-dose pre-filled pen with 4 once-weekly doses per pen
@@ -69,7 +69,7 @@ IF patient asks how to use Wegovy:
 ## Mounjaro Injection Instructions
 
 IF patient asks how to use Mounjaro:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
 
 **Key facts:**
 - Multi-dose pen with 4 once-weekly doses, uses disposable pen needles
@@ -95,7 +95,7 @@ IF patient asks how to use Mounjaro:
 ## Faulty Pen Diagnosis Tree
 
 IF patient reports pen not working:
-  → confidence = 0.85 (DIAGNOSE)
+  → confidence = 0.85 (SOLVE)
 
 **Step 1: Is needle attached?**
 - If NO → attach new needle, proceed to flow check/prime
@@ -123,7 +123,7 @@ IF pen confirmed faulty:
   → ⚠️ NEVER promise or imply a replacement. Keep neutral: "to help with next steps"
 
 IF pen not faulty (user error identified):
-  → confidence = 0.88 (EDUCATE)
+  → confidence = 0.88 (SOLVE)
   → Provide correct usage guidance for their specific medication
 
 ---
@@ -133,11 +133,11 @@ IF pen not faulty (user error identified):
 ⚠️ Only mention if patient specifically asks about 7.2mg.
 
 IF patient asks about 7.2mg Wegovy:
-  → confidence = 0.88 (INFORM — minimal first)
+  → confidence = 0.88 (SOLVE — minimal first)
   → "The 7.2mg dose is supplied as a 1-month supply (4 weeks)."
 
 IF patient asks how to administer 7.2mg:
-  → confidence = 0.85 (INFORM — detailed)
+  → confidence = 0.85 (SOLVE — detailed)
   → "The 7.2mg dose requires three separate 2.4mg injections on the same day, each at a different injection site:
     1. **First injection (2.4mg):** New needle, choose injection site, dial to 2.4mg, inject as normal
     2. **Second injection (2.4mg):** Remove used needle, attach new needle, choose DIFFERENT site, dial to 2.4mg, inject
@@ -145,7 +145,7 @@ IF patient asks how to administer 7.2mg:
     The three pens are delivered together in one box."
 
 IF patient asks about 7.2mg effectiveness (only if asked):
-  → confidence = 0.82 (INFORM)
+  → confidence = 0.82 (MONITOR)
   → "On average, users lost around 20.7% of body weight on 7.2mg compared to 17.5% on 2.4mg. Wegovy 7.2mg shows similar results to Mounjaro 15mg."
 
 IF patient asks about 7.2mg safety or side effects:
@@ -165,7 +165,7 @@ IF patient reports damaged pen on delivery:
 ## Glucomannan
 
 IF patient asks about Glucomannan:
-  → confidence = 0.88 (INFORM)
+  → confidence = 0.88 (SOLVE)
   → "Glucomannan is a natural, water-soluble fibre from the konjac root — it is NOT an injection. It absorbs water and forms a thick gel in your stomach, helping you feel fuller for longer. It contains almost no calories and may support appetite control.
 
 **Important notes:**
@@ -179,7 +179,7 @@ IF patient asks about Glucomannan:
 ## Initial Supply Kit Contents
 
 IF patient asks what's in their first delivery:
-  → confidence = 0.92 (INFORM)
+  → confidence = 0.92 (SOLVE)
   → "Your first delivery includes:
     - Medication pen(s) (number depends on your prescription)
     - 4 injection needles
@@ -218,7 +218,7 @@ IF patient asks about protective orange case:
 ⚠️ NEVER proactively compare medications or state one is more effective than the other.
 
 IF patient asks about effectiveness:
-  → confidence = 0.82 (INFORM)
+  → confidence = 0.82 (MONITOR)
   → "Mounjaro acts on both GLP-1 and GIP pathways, while Wegovy targets the GLP-1 pathway. Both are well-established, highly effective treatments. In clinical trials, Wegovy showed an average weight loss of approximately 15% of starting body weight."
   → ⚠️ NEVER state that Mounjaro is more effective than Wegovy
 
@@ -228,7 +228,7 @@ IF patient asks about effectiveness:
 
 **Example 1: Basic Wegovy usage**
 Patient: "How do I use my Wegovy pen?"
-→ confidence = 0.92 (INFORM — direct to app first)
+→ confidence = 0.92 (SOLVE — direct to app first)
 → "You can find step-by-step video instructions in the Voy app: Plan tab → Treatment Advice → Watch the Instructions. In summary, Wegovy is a pre-filled pen with 4 weekly doses. Pick a day each week, choose your injection site (stomach, thigh, or upper arm — rotate weekly), and hold for a count of 6 after pressing the dose button. Before your first injection with each new pen, do a flow check to make sure it's working."
 
 **Example 2: Faulty Mounjaro pen**
@@ -239,5 +239,5 @@ Patient: "My Mounjaro pen won't inject properly — nothing comes out when I pre
 
 **Example 3: Leftover liquid concern**
 Patient: "There's still liquid in my Mounjaro pen after 4 doses — am I missing a dose?"
-→ confidence = 0.92 (REASSURE)
+→ confidence = 0.92 (SOLVE)
 → "This is completely normal. Each Mounjaro pen is designed for exactly 4 weekly doses. The remaining liquid is expected and must not be injected or transferred. Please dispose of the pen safely in your sharps bin."

@@ -26,10 +26,10 @@ This document covers payment failures, billing schedules, payment method updates
 
 ```
 CALL get_order_history
-  IF order status = "In Progress" → confidence = 0.95 (REFER TO THAT ORDER)
+  IF order status = "In Progress" → confidence = 0.95 (SOLVE)
   IF no "In Progress" order found:
-    IF previous order payment_status = "AWAITING_PAYMENT" → confidence = 0.90 (REFER TO THAT ORDER)
-    IF neither condition met → confidence = 0.45 (ASK FOR ORDER NUMBER) → ESCALATE if not provided
+    IF previous order payment_status = "AWAITING_PAYMENT" → confidence = 0.90 (SOLVE)
+    IF neither condition met → confidence = 0.45 (ESCALATE) → ESCALATE if not provided
 ```
 
 **Step 2: Confirm payment failure and provide resolution**

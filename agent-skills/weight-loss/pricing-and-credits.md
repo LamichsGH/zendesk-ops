@@ -9,7 +9,7 @@ This file covers pricing inquiries, the credit system, refer-a-friend programme,
 - Credit system (wallet balance + recurring credits)
 - Refer-a-friend programme
 - First-order discounts
-- Longer plans (3-month / 6-month)
+- Longer plans (3-month / 6-month / 12-month)
 - Pricing conflict resolution
 - Voyager programme queries
 
@@ -55,7 +55,7 @@ IF patient has both an order in progress AND a next order:
 IF patient has only one order:
   → Proceed directly with that order, no confirmation needed
 
-→ confidence = 0.90 (INFORM)
+→ confidence = 0.90 (SOLVE)
 → "Your next order is scheduled at £X."
 
 IF tool output has no next order:
@@ -94,7 +94,7 @@ IF tool output is missing or fails:
 
 ## Refer-a-Friend Programme
 
-→ confidence = 0.88 (INFORM)
+→ confidence = 0.88 (SOLVE)
 
 **How it works:**
 1. Patient shares their unique referral link (found in app: gift icon top right → referral link → share)
@@ -121,7 +121,7 @@ IF patient complains they didn't receive referral credits:
 ⚠️ CRITICAL: Only mention first-order discounts if the patient has had fewer than 2 orders. If 2 or more orders exist, NEVER mention first-order discounts.
 
 IF patient asks why their price increased from their first order AND they have < 2 orders:
-  → confidence = 0.88 (INFORM)
+  → confidence = 0.88 (SOLVE)
   → "First orders receive a special introductory discount that doesn't apply to subsequent orders."
 
 IF patient has ≥ 2 orders:
@@ -147,15 +147,17 @@ IF patient says price is higher than expected:
 
 ---
 
-## Longer Plans (3-month / 6-month)
+## Longer Plans (3-month / 6-month / 12-month)
 
 IF patient asks about longer plan pricing:
-  → confidence = 0.88 (INFORM)
+  → confidence = 0.88 (SOLVE)
   → Use tool output for exact pricing. Displayed price already includes longer plan discount.
+
+**Available plan durations:** 28-day, 3-month, 6-month, and 12-month plans. Longer plans offer greater savings. Use tool output for exact pricing — displayed price already includes the plan discount.
 
 **Switching to longer plans:**
 - Patient on Mounjaro 28-day → Wegovy longer plan: direct to in-app switch (Plan tab)
-- Patient on Mounjaro 3M/6M → Wegovy longer plan: escalate to CS
+- Patient on Mounjaro 3M/6M/12M → Wegovy longer plan: escalate to CS
 - Patient on Wegovy 28-day → Wegovy longer plan: escalate to CS
 - New patient (0 orders) → longer plan: complete medical questionnaire in app
 
@@ -166,7 +168,7 @@ IF patient asks about longer plan pricing:
 ## Voyager Programme
 
 IF patient is on the Voyager programme:
-  → confidence = 0.85 (INFORM)
+  → confidence = 0.85 (SOLVE)
   → Provide price information only from tool output
   → "Pricing for the Voyager programme is managed by our research team. Please refer to your email, or contact the team directly for details."
 
@@ -177,14 +179,14 @@ IF patient is on the Voyager programme:
 **Example 1: Basic pricing query**
 Patient: "How much is my next order?"
 Agent calls `get_order_history` → next order £159.00
-→ confidence = 0.90 (INFORM)
+→ confidence = 0.90 (SOLVE)
 → "Your next order is scheduled at £159.00."
 
 **Example 2: Unexpected price increase**
 Patient: "Why am I being charged £159? My first order was £129."
 Agent checks `patient_status` → 2 orders total
 → Since ≥ 2 orders, do NOT mention first-order discount
-→ confidence = 0.88 (INFORM)
+→ confidence = 0.88 (SOLVE)
 → "Prices may vary based on your dose strength, as they increase with dosage. The price shown in your account reflects all applicable credits. If you believe there's a discrepancy, I can connect you with our team to review your billing details."
 
 **Example 3: Referral credit not applied**

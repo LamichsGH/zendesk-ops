@@ -28,7 +28,7 @@ This file covers account detail updates, address management, GP details, and per
 ## Update Shipping Address, Billing Address, or Phone Number
 
 IF patient wants to update their shipping address, billing address, or phone number:
-  → confidence = 0.90 (INFORM — guide to self-serve)
+  → confidence = 0.90 (SOLVE — guide to self-serve)
 
 ⚠️ Patients must update their address BEFORE their order is placed.
 
@@ -53,7 +53,7 @@ IF patient wants to update their shipping address, billing address, or phone num
 ## Address Changes and Order Timing
 
 IF patient requests address change AND order is NOT yet approved:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → Guide to self-serve update (app or web flow above)
   → "Please make sure to update your address before your next order is approved."
 
@@ -63,7 +63,7 @@ IF patient requests address change AND order is approved but NOT dispatched:
   → ⚠️ NEVER promise they will be able to change it
 
 IF patient requests address change AND order is already dispatched:
-  → confidence = 0.88 (INFORM)
+  → confidence = 0.88 (SOLVE)
   → "Your order has already been dispatched and we cannot change the delivery address. However, Royal Mail offers these options:
     - Divert to a safe place or neighbour
     - Collect from your local Post Office
@@ -80,12 +80,12 @@ IF patient wants to update their first name, last name, or email:
   → "You can view these details in your account, but they cannot be updated through the app or website. Let me connect you with our team to make this change."
 
 IF patient wants to view or update their date of birth:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → "Date of birth cannot be viewed or edited within the app or website."
   → IF they need to change it: → confidence = 0.55 (ESCALATE)
 
 IF patient asks about their height:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → "Height information is not viewable or editable in the app."
 
 ---
@@ -93,7 +93,7 @@ IF patient asks about their height:
 ## GP Details Update
 
 IF patient wants to add or update their GP details:
-  → confidence = 0.55 (GATHER + ESCALATE)
+  → confidence = 0.55 (ESCALATE)
 
 1. Inform the patient that updating GP details must be done by customer service
 2. Collect the following information:
@@ -110,7 +110,7 @@ IF patient wants to add or update their GP details:
 ## Billing History and Receipts
 
 IF patient asks for payment history or receipts:
-  → confidence = 0.90 (INFORM — guide to self-serve)
+  → confidence = 0.90 (SOLVE — guide to self-serve)
 
 → "You can view your payment history and receipts in the Voy app:
 1. Open the Voy app
@@ -131,12 +131,12 @@ IF patient needs a custom or official receipt format:
 **Example 1: Address update before order**
 Patient: "I need to change my delivery address."
 Agent calls `get_order_history` → no order in progress
-→ confidence = 0.90 (INFORM)
+→ confidence = 0.90 (SOLVE)
 → "You can update your delivery address in the Voy app: tap the profile icon (top right) → Account Details → edit your address and save. Please make sure to do this before your next order is approved."
 
 **Example 2: GP details update**
 Patient: "I've changed my GP. How do I update this?"
-→ confidence = 0.55 (GATHER + ESCALATE)
+→ confidence = 0.55 (ESCALATE)
 → "Updating GP details requires our team's assistance. Could you please share your new GP's name, address, phone number, and email (if available)? I'll then connect you with our team to get this updated."
 
 **Example 3: Name change**
@@ -146,5 +146,5 @@ Patient: "I got married and need to change my last name."
 
 **Example 4: Address change after dispatch**
 Patient: "My order shipped but I need it sent somewhere else."
-→ confidence = 0.88 (INFORM)
+→ confidence = 0.88 (SOLVE)
 → "Unfortunately, we can't change the delivery address once an order has been dispatched. Royal Mail does offer options to divert to a safe place, a neighbour, or collect from your local Post Office — you can manage these via your tracking link. For future orders, you can update your address in the Voy app under Account Details."

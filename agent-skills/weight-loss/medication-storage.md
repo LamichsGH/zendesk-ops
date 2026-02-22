@@ -25,7 +25,7 @@ This file covers medication storage requirements, travel guidance, sharps dispos
 ## Standard Storage
 
 IF patient asks about medication storage:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → Call `get_order_history` to identify the patient's medication, then provide the relevant guidance below.
 
 ### Wegovy Storage
@@ -55,7 +55,7 @@ IF patient asks about medication storage:
 ## Travel with Medication
 
 IF patient asks about travelling with their medication:
-  → confidence = 0.88 (INFORM)
+  → confidence = 0.88 (SOLVE)
 
 → "Both Wegovy and Mounjaro can be safely transported at room temperature (up to 30°C). Here's what to keep in mind:
 
@@ -63,10 +63,10 @@ IF patient asks about travelling with their medication:
 2. **Prescription copy** — carry one if travelling internationally (available on request)
 3. **Room temperature stability** — Wegovy is stable for up to 6 weeks, Mounjaro for up to 30 days
 
-Would you like me to provide a copy of your prescription for travel?"
+If you need a copy of your prescription for travel, just reply to this email and I'll arrange one for you."
 
 IF patient wants a cooling pouch or insulin travel bag:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
   → "Unfortunately, we're unable to provide cooling pouches or insulin travel bags. These can be purchased from most pharmacies or online."
 
 IF patient requests a prescription copy for travel:
@@ -78,10 +78,28 @@ IF patient requests a prescription copy for travel:
 
 ---
 
+## International Shipping Limitations
+
+IF patient asks about shipping to an international or non-UK address:
+  → confidence = 0.90 (SOLVE)
+
+→ "Our service is UK mainland only. We're unable to ship medication internationally due to prescribing and regulatory restrictions."
+
+**Key restrictions:**
+- No shipping to non-UK addresses
+- Crown Dependencies (Jersey, Guernsey, Isle of Man) and British Overseas Territories may have restrictions or be excluded
+- No use of mail forwarding or temporary accommodation addresses outside the UK
+
+IF patient is temporarily abroad:
+  → Advise them to adjust their next order date in the Voy app to receive medication before travel
+  → See "Travel with Medication" section above for transport guidance
+
+---
+
 ## Sharps and Pen Disposal
 
 IF patient asks about disposing of needles:
-  → confidence = 0.90 (INFORM)
+  → confidence = 0.90 (SOLVE)
 
 → "After each injection:
 1. Carefully replace the outer needle shield
@@ -95,12 +113,12 @@ IF patient asks about disposing of needles:
 ### Pen Recycling
 
 - **Mounjaro pens:** Currently NOT recyclable — cannot be refilled, and trace medication means they cannot be recycled
-- **Wegovy pens:** Can be recycled by the manufacturer. Request a free dedicated recycling box via the Wegovy recycling programme
+- **Wegovy pens:** Can be recycled via [pen-cycle.co.uk](https://pen-cycle.co.uk). Request a free dedicated recycling box through their programme
 
 ### Sharps Bin Disposal
 
 → "When your sharps bin is full, you have several disposal options:
-1. **Council collection (free):** Arrange a free clinical waste collection through your local council at gov.uk/request-clinical-waste-collection
+1. **Council collection (free):** Arrange a free clinical waste collection through your local council at [gov.uk/request-clinical-waste-collection](https://www.gov.uk/request-clinical-waste-collection)
 2. **Pharmacy drop-off:** Some local pharmacies accept sharps bins — contact yours in advance to confirm
 3. **GP surgery:** Some GP surgeries accept sharps bins — check with yours beforehand"
 
@@ -117,15 +135,15 @@ IF patient needs a new sharps bin:
 
 **Example 1: Wegovy storage question**
 Patient: "Can I keep my Wegovy pen out of the fridge?"
-→ confidence = 0.90 (INFORM)
+→ confidence = 0.90 (SOLVE)
 → "Yes, Wegovy can be stored at room temperature (up to 30°C) for up to 6 weeks from when it was shipped. However, once it's been at room temperature, the 42-day countdown begins and doesn't reset even if you put it back in the fridge. For longer storage, keep it refrigerated (2–8°C) until use."
 
 **Example 2: Travel query**
 Patient: "I'm going on holiday next week. Can I take my Mounjaro?"
-→ confidence = 0.88 (INFORM)
+→ confidence = 0.88 (SOLVE)
 → "Yes, you can travel with your Mounjaro. Pack it in your hand luggage (not checked bags) and it will stay stable at room temperature for up to 30 days. If you're travelling internationally, I'd recommend carrying a copy of your prescription. Would you like me to provide one?"
 
 **Example 3: Sharps disposal**
 Patient: "My sharps bin is full. What do I do?"
-→ confidence = 0.90 (INFORM)
-→ "You have a few options for disposing of a full sharps bin: (1) Arrange a free council collection at gov.uk/request-clinical-waste-collection, (2) Drop it off at a local pharmacy that accepts sharps bins, or (3) Check if your GP surgery provides disposal. Would you also like a new sharps bin? I can connect you with our team to arrange one."
+→ confidence = 0.90 (SOLVE)
+→ "You have a few options for disposing of a full sharps bin: (1) Arrange a free council collection at [gov.uk/request-clinical-waste-collection](https://www.gov.uk/request-clinical-waste-collection), (2) Drop it off at a local pharmacy that accepts sharps bins, or (3) Check if your GP surgery provides disposal. Would you also like a new sharps bin? I can connect you with our team to arrange one."

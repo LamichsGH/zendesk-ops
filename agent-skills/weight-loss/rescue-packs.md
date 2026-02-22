@@ -12,12 +12,12 @@ This skill handles patient queries about rescue pack care packages (Cyclizine an
 
 **Does NOT cover:**
 - Other side effect management strategies (see `side-effects.md`)
-- General medication questions (see `medication-info.md`)
+- General medication questions (see `how-to-use-medication.md`)
 - Prescription modifications (see `dose-changes.md`)
 
 **Cross-references:**
 - `side-effects.md` — for nausea/diarrhoea management beyond rescue packs
-- `medication-info.md` — for general medication safety information
+- `how-to-use-medication.md` — for general medication safety information
 
 ---
 
@@ -26,11 +26,11 @@ This skill handles patient queries about rescue pack care packages (Cyclizine an
 ### General Rescue Pack Questions
 
 **IF** patient asks what rescue packs are:
-→ confidence = 0.95 (RESPOND)
+→ confidence = 0.95 (SOLVE)
 → "Your rescue pack is a one-time care package included with your FIRST order of Wegovy or Mounjaro. It contains Cyclizine (anti-nausea tablets) and Loperamide (anti-diarrhoea capsules) to help manage common side effects if they occur. You'll only receive this pack with your first order, not with subsequent refills."
 
 **IF** patient asks why they didn't receive a rescue pack with their second/third/later order:
-→ confidence = 0.93 (RESPOND)
+→ confidence = 0.93 (SOLVE)
 → "Rescue packs are only provided with your first medication order. If you've run out of Cyclizine or Loperamide and need additional supplies, I can connect you with a clinician who can assess your needs and arrange this for you."
 
 ---
@@ -40,11 +40,11 @@ This skill handles patient queries about rescue pack care packages (Cyclizine an
 ### Usage and Dosage
 
 **IF** patient asks how to use Cyclizine:
-→ confidence = 0.94 (RESPOND)
+→ confidence = 0.94 (SOLVE)
 → "Cyclizine helps ease nausea by calming the signals in your brain that trigger sickness. Take one 50mg tablet up to three times daily as needed. Always leave at least 4 hours between doses and do not exceed three tablets in 24 hours. Please note that Cyclizine contains lactose."
 
 **IF** patient asks about Cyclizine side effects:
-→ confidence = 0.92 (RESPOND)
+→ confidence = 0.92 (SOLVE)
 → "Cyclizine may cause drowsiness or dizziness. Take extra care when driving or operating machinery. Avoid alcohol while taking Cyclizine as it can increase these effects."
 
 ### Cyclizine Contraindications
@@ -73,11 +73,11 @@ This skill handles patient queries about rescue pack care packages (Cyclizine an
 ### Usage and Dosage
 
 **IF** patient asks how to use Loperamide:
-→ confidence = 0.94 (RESPOND)
+→ confidence = 0.94 (SOLVE)
 → "Loperamide treats diarrhoea by slowing gut movement, which allows your body to absorb more water. Take two 2mg capsules after your first loose bowel movement, then one capsule after each further episode. Do not exceed 8 capsules in 24 hours. Stay well hydrated while using Loperamide. Please note it contains lactose."
 
 **IF** patient asks how long they can use Loperamide:
-→ confidence = 0.91 (RESPOND)
+→ confidence = 0.91 (SOLVE)
 → "Only use Loperamide for up to 48 hours unless advised otherwise by a clinician. If your diarrhoea persists beyond 2 days despite treatment, you'll need clinical assessment."
 
 ### Loperamide Contraindications
