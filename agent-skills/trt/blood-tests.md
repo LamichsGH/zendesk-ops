@@ -89,8 +89,9 @@ Order data shows: variantName "Enhanced Test Kit Only (Randox)", orderState "can
 - Signals: "not enough blood", "can't fill", "lancets", "finger prick difficult"
 - See "Finger-Prick Failure & Venous Alternatives" section below
 
-**STAGE D — Results Queries / Format Requests**
+**STAGE D — Results Queries / Format Requests (ESCALATE)**
 - Signals: "PDF", "download results", "share with GP", "actual numbers"
+- Agent CANNOT retrieve or send blood test results — always ESCALATE
 - See "Results Format Requests" section below
 
 **STAGE E — External / GP Results**
@@ -298,19 +299,20 @@ IF patient received contradictory automated messages:
 
 ## Results Format Requests
 
-IF patient asks for PDF/downloadable/printable results:
-  → confidence = 0.85 (SOLVE)
-  → Call get_prescription_copy or search KB for how to share results
-  → "I can request a PDF copy of your results to be sent to you."
-  → Do NOT default to "check the portal" if they specifically asked for a PDF
+⚠️ The agent CANNOT retrieve or send blood test results. The `get_prescription_copy` tool only provides prescriptions, NOT blood test results. All requests for blood test results in PDF/downloadable format must be escalated.
+
+IF patient asks for PDF/downloadable/printable blood test results:
+  → confidence = 0.55 (ESCALATE)
+  → "I've passed your request to our patient care team — they'll be able to send you a PDF copy of your blood test results. We're currently experiencing high demand, so please allow 24-48 hours for a response."
+  → internal_note: "Issue: Patient requesting blood test results in PDF format. Action: Team to retrieve and send blood test results document to patient."
 
 IF patient wants to share results with GP:
-  → Offer PDF copy
-  → Explain which markers are included
+  → confidence = 0.55 (ESCALATE)
+  → "I've passed this to our patient care team — they can provide your results in a format suitable for sharing with your GP. We're currently experiencing high demand, so please allow 24-48 hours for a response."
 
 IF patient asks for specific numbers/values:
   → confidence = 0.55 (ESCALATE)
-  → Escalate for team to retrieve and share specific result values
+  → "I've passed this to our patient care team — they can retrieve your specific result values and share them with you. We're currently experiencing high demand, so please allow 24-48 hours for a response."
 
 ## External Results Acceptance
 
