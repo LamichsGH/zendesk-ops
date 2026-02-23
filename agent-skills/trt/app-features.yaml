@@ -1,0 +1,15 @@
+name: AppFeatures
+description: Voy app navigation, tab features (Home, Progress, Plan, Chat), profile settings, download links, bug reporting, and country/region changes. Does not cover order tracking details, login issues, or medication tutorials.
+keywords:
+  - "how do I use the app"
+  - "where do I find my results in the app"
+  - "app not working"
+  - "can't find the plan tab"
+  - "how do I download the app"
+  - "app bug"
+  - "steps tracking not showing"
+  - "how do I change my country in the app"
+  - "what does the progress tab show"
+  - "app keeps crashing"
+priority: 7
+tools_needed: []

@@ -1,0 +1,16 @@
+name: RestartSubscription
+description: Reactivating a previously cancelled TRT subscription, including time-off-treatment assessment, blood work requirements for returning patients, dose reset safety rules, and discount eligibility. Does not cover resuming from a pause or new patient sign-ups.
+keywords:
+  - "I want to restart my TRT"
+  - "can I come back after cancelling"
+  - "reactivate my subscription"
+  - "I cancelled but want to start again"
+  - "how do I resume treatment"
+  - "do I need new blood tests to restart"
+  - "returning patient"
+  - "I stopped TRT and want to come back"
+  - "will I start on the same dose"
+  - "rejoin after cancellation"
+priority: 4
+tools_needed:
+  - get_subscription_status

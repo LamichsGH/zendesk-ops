@@ -1,0 +1,15 @@
+name: Coaching
+description: Covers the coaching programme -- what it includes, booking and rescheduling coaching calls, and coach assignment. Does NOT cover 1-to-1 clinical consultations, webinars, or the Getting Started Session (see self-serve-resources).
+keywords:
+  - how do I book a coaching call
+  - who is my coach
+  - can I change my coach
+  - what does coaching include
+  - reschedule my coaching session
+  - cancel my coaching call
+  - is coaching included in my plan
+  - do I get a coach
+  - when is my next coaching session
+priority: 8
+tools_needed:
+  - get_subscription_status

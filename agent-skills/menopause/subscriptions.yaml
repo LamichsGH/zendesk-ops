@@ -1,0 +1,18 @@
+name: Subscriptions
+description: Handles subscription status queries, payment dates, and cancellation requests for menopause HRT treatment plans.
+keywords:
+  - cancel my subscription
+  - when is my next payment
+  - pause my HRT plan
+  - change my subscription
+  - subscription status
+  - stop my menopause deliveries
+  - skip next order
+  - how do I cancel
+  - next delivery date
+  - update my HRT plan
+  - switch to patches
+  - stop charging me
+priority: 2
+tools_needed:
+  - get_subscription_status

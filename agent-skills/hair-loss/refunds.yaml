@@ -1,0 +1,18 @@
+name: Refunds
+description: Handles refund requests for hair loss products such as finasteride, minoxidil, and biotin treatments.
+keywords:
+  - I want a refund
+  - money back
+  - finasteride refund
+  - minoxidil didn't work
+  - hair loss treatment refund
+  - charged incorrectly
+  - overcharged
+  - double charged
+  - get my money back
+  - refund request
+  - not happy with my order
+  - return my hair loss product
+priority: 2
+tools_needed:
+  - get_order_history

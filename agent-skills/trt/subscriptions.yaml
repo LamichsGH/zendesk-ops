@@ -1,0 +1,17 @@
+name: Subscriptions
+description: Subscription status, AIOS vs Non-AIOS plan inclusions, billing cycles, payment date changes, next order/shipment queries, cancellation and pause requests, dose and plan change requests. Does not cover payment failures, refunds, or medication delivery tracking.
+keywords:
+  - "what's included in my plan"
+  - "when is my next payment"
+  - "I want to cancel my subscription"
+  - "can I pause my subscription"
+  - "what plan am I on"
+  - "change my payment date"
+  - "AIOS vs non-AIOS"
+  - "when is my next order due"
+  - "I want to upgrade my plan"
+  - "when is my next blood test"
+  - "cancel my TRT subscription"
+priority: 2
+tools_needed:
+  - get_subscription_status

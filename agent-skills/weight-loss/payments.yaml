@@ -1,0 +1,16 @@
+name: Payments
+description: Covers payment failures, auto-retry schedules, payment method updates, billing cycles, and first-order billing. Does NOT cover refunds, pricing questions, or order status beyond payment state.
+keywords:
+  - my payment failed
+  - card declined
+  - how do I update my payment method
+  - change my card
+  - when will I be charged
+  - billing date
+  - payment not going through
+  - retry my payment
+  - accepted payment methods
+  - why was my card rejected
+priority: 3
+tools_needed:
+  - get_subscription_status

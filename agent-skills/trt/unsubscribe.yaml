@@ -1,0 +1,15 @@
+name: Unsubscribe
+description: Email and marketing unsubscribe requests (GDPR opt-out). Handles the disambiguation between email unsubscribe and subscription cancellation. Does not cover TRT subscription cancellation or account deletion (those escalate).
+keywords:
+  - "unsubscribe from emails"
+  - "stop sending me emails"
+  - "too many marketing emails"
+  - "how do I opt out"
+  - "remove me from your mailing list"
+  - "I keep getting spam from you"
+  - "GDPR unsubscribe"
+  - "stop all communications"
+  - "I don't want promotional emails"
+  - "where is the unsubscribe button"
+priority: 5
+tools_needed: []

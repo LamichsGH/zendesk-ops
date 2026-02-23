@@ -1,0 +1,16 @@
+name: Refunds
+description: Refund requests for orders, subscriptions, damaged or wrong items, and service complaints. The agent cannot process refunds -- all requests are escalated with gathered context. Does not cover billing failures or subscription management.
+keywords:
+  - "I want a refund"
+  - "can I get my money back"
+  - "I received the wrong medication"
+  - "my order arrived damaged"
+  - "charged after I cancelled"
+  - "I was overcharged"
+  - "this isn't working, I want a refund"
+  - "double charged on my subscription"
+  - "refund for blood test kit"
+  - "how long does a refund take"
+priority: 3
+tools_needed:
+  - get_order_history

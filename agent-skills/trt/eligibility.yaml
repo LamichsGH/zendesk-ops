@@ -1,0 +1,15 @@
+name: Eligibility
+description: TRT eligibility criteria, pre-screening red flags (age, location, cancer, BP), testosterone threshold rules, ineligibility handling, self-medicating patient onboarding, and result validity periods.
+keywords:
+  - "am I eligible for TRT"
+  - "my testosterone level is too high"
+  - "can I get TRT if I'm under 18"
+  - "do you treat patients outside the UK"
+  - "I'm already on testosterone from another provider"
+  - "I was told I'm not eligible"
+  - "what testosterone level do I need"
+  - "I've been self-medicating testosterone"
+  - "are my blood test results still valid"
+  - "can I use my own blood test results"
+priority: 4
+tools_needed: []

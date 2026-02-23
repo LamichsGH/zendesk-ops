@@ -1,0 +1,16 @@
+name: BillingAndPayments
+description: Payment failures, failed transactions, discount code issues, and billing confusion (e.g. paid but no medication). Does not cover refund requests (see refunds) or subscription plan management (see subscriptions).
+keywords:
+  - "payment failed"
+  - "I was charged but nothing happened"
+  - "discount code not working"
+  - "Apple Pay error"
+  - "I paid but didn't get my medication"
+  - "double charged"
+  - "forgot to apply discount code"
+  - "how do I pay for my subscription"
+  - "payment taken but shows failed"
+  - "promo code doesn't work"
+priority: 3
+tools_needed:
+  - get_subscription_status

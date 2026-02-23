@@ -1,0 +1,17 @@
+name: SideEffects
+description: Covers side effect triage and severity classification (3 tiers) for Wegovy and Mounjaro, concurrent medication rules, and injection site reactions. Does NOT cover rescue pack medication details or dose changes due to side effects.
+keywords:
+  - I feel sick after my injection
+  - nausea from wegovy
+  - mounjaro side effects
+  - diarrhoea after injection
+  - constipation from medication
+  - headache after taking mounjaro
+  - injection site reaction
+  - can I take paracetamol with wegovy
+  - vomiting after injection
+  - feeling dizzy
+  - stomach pain
+  - heartburn
+priority: 2
+tools_needed: []

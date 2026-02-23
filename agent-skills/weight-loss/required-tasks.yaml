@@ -1,0 +1,17 @@
+name: RequiredTasks
+description: Covers pre-order tasks patients must complete before medication approval -- ID verification, BMI photo, video BMI call, proof of previous prescription, weight reading, and first-order billing reservation. Does NOT cover order status after tasks are completed.
+keywords:
+  - ID verification
+  - upload my ID
+  - BMI photo
+  - how do I take my BMI picture
+  - video call for BMI
+  - proof of prescription
+  - what do I need to do before my order
+  - pending tasks
+  - my order is waiting for verification
+  - why hasn't my order been approved
+  - what documents do I need
+priority: 4
+tools_needed:
+  - get_customer_tasks

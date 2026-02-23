@@ -1,0 +1,16 @@
+name: MedicationStorage
+description: Covers storage requirements (fridge and room temperature rules) for Wegovy and Mounjaro, travel with medication, sharps disposal, and requesting prescription copies. Does NOT cover injection technique or cold chain concerns on delivery.
+keywords:
+  - how to store my medication
+  - can I keep it out of the fridge
+  - travelling with my pen
+  - how long can wegovy be at room temperature
+  - mounjaro storage
+  - sharps disposal
+  - how to dispose of needles
+  - prescription copy
+  - my medication was left out
+  - flying with injection
+  - 42 day rule
+priority: 6
+tools_needed: []

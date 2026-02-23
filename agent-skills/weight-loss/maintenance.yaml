@@ -1,0 +1,15 @@
+name: Maintenance
+description: Covers maintenance phase for patients at or near goal weight -- down-titration, stopping treatment, treatment breaks, and switching medications for affordability. Does NOT cover dose changes during active weight loss or subscription cancellation.
+keywords:
+  - I've reached my goal weight
+  - how do I stop treatment
+  - can I reduce my dose gradually
+  - maintenance phase
+  - I want to come off medication
+  - down-titration
+  - take a break from treatment
+  - what happens when I stop
+  - keeping weight off
+  - do I need to stay on medication forever
+priority: 6
+tools_needed: []

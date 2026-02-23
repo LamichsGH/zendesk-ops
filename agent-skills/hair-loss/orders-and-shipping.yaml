@@ -1,0 +1,18 @@
+name: OrdersAndShipping
+description: Handles order tracking, delivery status, and shipping queries for hair loss treatments including finasteride and minoxidil.
+keywords:
+  - where is my order
+  - tracking number
+  - when will my finasteride arrive
+  - delivery update
+  - my minoxidil hasn't arrived
+  - shipping delay
+  - hair loss order status
+  - package not delivered
+  - when will I receive my treatment
+  - lost in transit
+  - expected delivery date
+  - dispatched but not arrived
+priority: 1
+tools_needed:
+  - get_order_history

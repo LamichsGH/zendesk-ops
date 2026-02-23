@@ -1,0 +1,15 @@
+name: MedicationStorage
+description: Storage guidance for all TRT medications (temperature, refrigeration rules for HCG), temperature excursion questions, domestic and international travel with medication, travel letters, and sharps disposal. Does not cover injection technique or delivery issues.
+keywords:
+  - "how do I store testosterone"
+  - "does HCG need to go in the fridge"
+  - "can I travel with my medication"
+  - "do I need a travel letter"
+  - "my medication was left in the heat"
+  - "how do I dispose of sharps"
+  - "can I take testosterone on a plane"
+  - "medication got too hot"
+  - "where do I get a sharps bin"
+  - "can I freeze HCG"
+priority: 6
+tools_needed: []

@@ -1,0 +1,17 @@
+name: AccountManagement
+description: Covers account detail updates (address, phone, name, email, DOB, GP details) and billing history/receipts. Does NOT cover login issues, subscription changes, or payment method updates.
+keywords:
+  - change my address
+  - update my phone number
+  - how do I change my email
+  - update my name on the account
+  - I moved house
+  - change my GP details
+  - update my doctor information
+  - where can I see my receipts
+  - billing history
+  - update my personal details
+  - my address is wrong
+priority: 4
+tools_needed:
+  - get_subscription_status

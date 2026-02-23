@@ -1,0 +1,16 @@
+name: Unsubscribe
+description: Handles GDPR unsubscribe and marketing opt-out requests for the Menopause Care brand.
+keywords:
+  - unsubscribe from emails
+  - stop sending me emails
+  - marketing emails
+  - opt out
+  - remove me from mailing list
+  - too many emails
+  - GDPR request
+  - delete my data
+  - stop contacting me
+  - email preferences
+  - don't want promotional emails
+priority: 4
+tools_needed: []

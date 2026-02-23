@@ -1,0 +1,17 @@
+name: Subscriptions
+description: Covers subscription cancellation (individual orders vs entire plan), pausing, rescheduling, restarting, plan type changes (28-day vs longer plans), and cancellation fees. Does NOT cover payment failures, refunds, or dose changes.
+keywords:
+  - cancel my subscription
+  - pause my plan
+  - skip my next order
+  - restart my subscription
+  - change my plan
+  - switch to 3 month plan
+  - cancellation fee
+  - how do I cancel
+  - put my subscription on hold
+  - reschedule my next order
+  - I want to stop my plan
+priority: 2
+tools_needed:
+  - get_subscription_status

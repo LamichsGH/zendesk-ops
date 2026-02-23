@@ -1,0 +1,15 @@
+name: BiomarkerGlossary
+description: Generic definitions of biomarkers tested in TRT blood panels (hormones, FBC, LFT, metabolic markers). Never interprets patient-specific results or reference ranges -- only provides textbook definitions.
+keywords:
+  - "what does testosterone mean on my results"
+  - "what is oestradiol"
+  - "what does SHBG stand for"
+  - "what is haematocrit"
+  - "what are liver function markers"
+  - "what does PSA test for"
+  - "explain my blood test markers"
+  - "what is free testosterone"
+  - "what does cholesterol mean"
+  - "what is HbA1c"
+priority: 6
+tools_needed: []

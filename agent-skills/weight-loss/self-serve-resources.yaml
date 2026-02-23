@@ -1,0 +1,16 @@
+name: SelfServeResources
+description: Covers webinars, live talks, educational content in the Voy app, and the Getting Started Session (group onboarding). Does NOT cover 1-to-1 coaching sessions or coach assignment -- those go to coaching.
+keywords:
+  - how do I join the getting started session
+  - webinar schedule
+  - educational content
+  - live talks
+  - nutrition webinar
+  - can't join the webinar
+  - where do I find learning resources
+  - onboarding session
+  - group session
+  - exercise webinar
+priority: 6
+tools_needed:
+  - get_subscription_status

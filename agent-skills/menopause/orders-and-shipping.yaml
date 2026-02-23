@@ -1,0 +1,18 @@
+name: OrdersAndShipping
+description: Handles order tracking, delivery status, and shipping queries for menopause treatments including HRT patches, oestrogen, and progesterone.
+keywords:
+  - where is my HRT order
+  - tracking number
+  - when will my patches arrive
+  - delivery update
+  - my oestrogen hasn't arrived
+  - shipping delay
+  - menopause order status
+  - package not delivered
+  - when will I receive my HRT
+  - lost in transit
+  - expected delivery date
+  - progesterone not dispatched
+priority: 1
+tools_needed:
+  - get_order_history

@@ -1,0 +1,17 @@
+name: DoseChanges
+description: Dose change requests for TRT medications including increase, decrease, pause, switch, titration levels, and the 4-week treatment gap safety rule. All dose changes require clinical escalation.
+keywords:
+  - "I want to increase my dose"
+  - "can I lower my testosterone dose"
+  - "I want to switch medication"
+  - "can I pause my TRT"
+  - "I've been off testosterone for a month"
+  - "what titration level am I on"
+  - "I want to try a different testosterone"
+  - "can I go up to the next dose"
+  - "I stopped injecting for a few weeks"
+  - "switch from Sustanon to Cypionate"
+priority: 2
+tools_needed:
+  - get_order_history
+  - get_subscription_status

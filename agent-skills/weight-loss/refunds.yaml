@@ -1,0 +1,17 @@
+name: Refunds
+description: Covers refund requests, refund status queries, returns policy, Money Back Guarantee, and billing discrepancies. Does NOT cover payment failures or retry -- those go to payments.
+keywords:
+  - I want a refund
+  - where is my refund
+  - can I return my medication
+  - money back guarantee
+  - I was charged twice
+  - unexpected charge
+  - billing discrepancy
+  - cancel and get my money back
+  - refund status
+  - I didn't receive my order can I get a refund
+  - overcharged
+priority: 3
+tools_needed:
+  - get_order_history

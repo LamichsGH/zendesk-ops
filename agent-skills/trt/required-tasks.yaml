@@ -1,0 +1,16 @@
+name: RequiredTasks
+description: Pre-treatment tasks patients must complete before progressing (ID verification, health questionnaire, blood tests, GP consent, payment details). Interprets task status from get_customer_tasks output and guides task prioritisation.
+keywords:
+  - "what do I need to do next"
+  - "my tasks aren't complete"
+  - "how do I upload my ID"
+  - "health questionnaire not working"
+  - "GP consent form"
+  - "what's blocking my treatment"
+  - "I completed everything but nothing happened"
+  - "outstanding tasks on my account"
+  - "how do I finish my onboarding"
+  - "my task says pending"
+priority: 4
+tools_needed:
+  - get_customer_tasks

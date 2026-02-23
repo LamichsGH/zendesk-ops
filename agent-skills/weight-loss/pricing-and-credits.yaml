@@ -1,0 +1,17 @@
+name: PricingAndCredits
+description: Covers pricing inquiries, the credit/wallet system, refer-a-friend programme, first-order discounts, longer plan pricing, and Voyager programme. Does NOT cover payment failures or subscription plan changes.
+keywords:
+  - how much does it cost
+  - price of wegovy
+  - price of mounjaro
+  - do you have a discount
+  - refer a friend
+  - how do credits work
+  - wallet balance
+  - 3 month plan price
+  - first order discount
+  - is there a cheaper plan
+  - voyager programme
+priority: 5
+tools_needed:
+  - get_subscription_status

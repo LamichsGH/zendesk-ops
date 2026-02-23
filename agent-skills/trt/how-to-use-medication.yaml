@@ -1,0 +1,17 @@
+name: HowToUseMedication
+description: Medication usage instructions for injectables (Cypionate, Sustanon, HCG), cream application, oral medications (Clomid, Tadalafil), crystallised Cypionate troubleshooting, faulty equipment, and ordering more medication. Does not cover storage, travel, or side effects.
+keywords:
+  - "how do I inject testosterone"
+  - "how do I use the cream"
+  - "my Cypionate has crystals in it"
+  - "needle broke during injection"
+  - "how do I mix HCG"
+  - "what needle size do I use"
+  - "how do I order more medication"
+  - "injection training video call"
+  - "how to draw up Sustanon"
+  - "when do I take Clomid"
+  - "faulty syringe"
+priority: 4
+tools_needed:
+  - get_order_history

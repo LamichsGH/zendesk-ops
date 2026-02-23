@@ -1,0 +1,18 @@
+name: AccountAndPortal
+description: Login issues, account verification, MANUAL-to-Voy brand migration, portal navigation, ID verification, and GP details updates. Does not cover subscription changes, clinical questions, or blood test booking.
+keywords:
+  - "I can't log in"
+  - "password reset not working"
+  - "no reset email received"
+  - "phone number already linked"
+  - "can't access my account"
+  - "MANUAL to Voy"
+  - "reCAPTCHA not working"
+  - "how do I verify my ID"
+  - "can't find my results in the portal"
+  - "how do I update my GP details"
+  - "account locked"
+  - "forgot my password"
+priority: 5
+tools_needed:
+  - get_subscription_status

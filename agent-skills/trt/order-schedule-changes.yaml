@@ -1,0 +1,16 @@
+name: OrderScheduleChanges
+description: Requests to delay, advance, pause, or skip medication order dispatch timing. Clarifies the distinction between payment date changes (billing) and order schedule changes (dispatch). Does not cover payment date changes, full cancellations, or delivery tracking.
+keywords:
+  - "can I delay my next order"
+  - "I want to push back my medication"
+  - "can I get my order sooner"
+  - "I want to skip my next order"
+  - "pause my orders for a month"
+  - "can I change when my medication ships"
+  - "I have enough medication for now"
+  - "bring my next order forward"
+  - "I'm going on holiday, delay my order"
+  - "stop sending medication temporarily"
+priority: 3
+tools_needed:
+  - get_order_history

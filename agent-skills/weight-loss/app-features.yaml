@@ -1,0 +1,16 @@
+name: AppFeatures
+description: Covers Voy app navigation, tab features, bug reporting, medication switching, and in-app tracking (injections, meals, weight). Does NOT cover order tracking, account detail edits, or login issues.
+keywords:
+  - how do I use the app
+  - where do I find my progress
+  - app is not working
+  - how to log my injection
+  - track my weight in the app
+  - meal tracking
+  - switch medication in the app
+  - app bug
+  - download the voy app
+  - how to log my meal
+  - change country in the app
+priority: 6
+tools_needed: []

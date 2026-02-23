@@ -1,0 +1,20 @@
+name: OrdersAndShipping
+description: Covers order status (WISMO), clinical approval status, shipping timelines, tracking, delivery issues, cold chain integrity, address changes for dispatched orders, and subscription cycle auto-orders. Does NOT cover payment failures, subscription changes, or medication usage.
+keywords:
+  - where is my order
+  - when will my medication arrive
+  - tracking number
+  - my order hasn't arrived
+  - delivery status
+  - order stuck
+  - when is my next order
+  - my package is lost
+  - order not dispatched
+  - has my order been approved
+  - cold chain
+  - change address on dispatched order
+  - royal mail tracking
+priority: 1
+tools_needed:
+  - get_order_history
+  - get_customer_tasks

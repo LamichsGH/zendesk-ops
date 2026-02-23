@@ -1,0 +1,19 @@
+name: DoseChanges
+description: Covers dose change requests, titration schedules for Wegovy and Mounjaro, missed doses, treatment gaps over 4 weeks, medication switching, and the 3-day order cutoff rule. Does NOT cover side effects from dose changes or injection technique.
+keywords:
+  - increase my dose
+  - change my dosage
+  - I want to go up a dose
+  - titration schedule
+  - I missed my injection
+  - I skipped a dose
+  - switch from wegovy to mounjaro
+  - switch from mounjaro to wegovy
+  - I haven't taken my medication for weeks
+  - can I stay on the same dose
+  - when does my dose go up
+  - decrease my dose
+priority: 2
+tools_needed:
+  - get_order_history
+  - get_subscription_status

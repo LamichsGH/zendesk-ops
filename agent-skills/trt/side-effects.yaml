@@ -1,0 +1,16 @@
+name: SideEffects
+description: TRT side effect triage across three severity tiers -- common/expected (acne, injection site pain), clinical review needed (gynecomastia, hair loss, sleep apnoea), and emergency (chest pain, blood clots, suicidal thoughts). Does not cover dose change processing.
+keywords:
+  - "I have acne since starting TRT"
+  - "injection site is red and sore"
+  - "mood swings on testosterone"
+  - "chest pain after injection"
+  - "hair falling out on TRT"
+  - "breast tenderness"
+  - "swelling at injection site"
+  - "feeling anxious since starting treatment"
+  - "oily skin since starting testosterone"
+  - "trouble sleeping on TRT"
+  - "blood pressure feels high"
+priority: 2
+tools_needed: []

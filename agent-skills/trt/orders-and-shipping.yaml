@@ -1,0 +1,17 @@
+name: OrdersAndShipping
+description: Medication order tracking, delivery status, dispatch timing, manual vs auto-dispatch rules, and the payment-does-not-equal-dispatch distinction. Covers medication orders only -- blood test kit delivery is in blood-tests.
+keywords:
+  - "where is my medication"
+  - "my order hasn't arrived"
+  - "tracking not updating"
+  - "when will my testosterone be dispatched"
+  - "I paid but no medication shipped"
+  - "how do I place an order in the app"
+  - "order stuck in processing"
+  - "how long does delivery take"
+  - "when should I reorder"
+  - "my medication hasn't been sent"
+  - "order status"
+priority: 1
+tools_needed:
+  - get_order_history

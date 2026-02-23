@@ -1,0 +1,15 @@
+name: ClinicalRouting
+description: Clinical questions the AI must not answer and must route to the clinical team, including medication interactions, dose adjustment concerns, supplement safety, fertility, allergic reactions, and switching TRT providers.
+keywords:
+  - "can I take this with my TRT"
+  - "will my other medication interact"
+  - "is it safe to take supplements with testosterone"
+  - "I want to change my dose"
+  - "switching from NHS TRT"
+  - "fertility and testosterone"
+  - "allergic reaction to my injection"
+  - "can I take finasteride with TRT"
+  - "coming from another TRT clinic"
+  - "is ashwagandha safe with TRT"
+priority: 3
+tools_needed: []
