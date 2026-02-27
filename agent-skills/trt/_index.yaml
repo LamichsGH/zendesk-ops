@@ -1,4 +1,5 @@
 name: AccountAndPortal
+filename: account-and-portal.md
 description: Login issues, account verification, MANUAL-to-Voy brand migration, portal navigation, ID verification, and GP details updates. Does not cover subscription changes, clinical questions, or blood test booking.
 keywords:
   - "I can't log in"
@@ -18,6 +19,7 @@ tools_needed:
   - get_subscription_status
 ---
 name: AppFeatures
+filename: app-features.md
 description: Voy app navigation, tab features (Home, Progress, Plan, Chat), profile settings, download links, bug reporting, and country/region changes. Does not cover order tracking details, login issues, or medication tutorials.
 keywords:
   - "how do I use the app"
@@ -34,6 +36,7 @@ priority: 7
 tools_needed: []
 ---
 name: BillingAndPayments
+filename: billing-and-payments.md
 description: Payment failures, failed transactions, discount code issues, and billing confusion (e.g. paid but no medication). Does not cover refund requests (see refunds) or subscription plan management (see subscriptions).
 keywords:
   - "payment failed"
@@ -51,6 +54,7 @@ tools_needed:
   - get_subscription_status
 ---
 name: BiomarkerGlossary
+filename: biomarker-glossary.md
 description: Generic definitions of biomarkers tested in TRT blood panels (hormones, FBC, LFT, metabolic markers). Never interprets patient-specific results or reference ranges -- only provides textbook definitions.
 keywords:
   - "what does testosterone mean on my results"
@@ -67,6 +71,7 @@ priority: 6
 tools_needed: []
 ---
 name: BloodTests
+filename: blood-tests.md
 description: All blood test topics including kit delivery, finger-prick sample collection, return shipping, lab processing, results availability, replacement kits, venous alternatives, nurse visits, and the two-test requirement. Does not cover medication delivery.
 keywords:
   - "where is my test kit"
@@ -86,6 +91,7 @@ tools_needed:
   - get_order_history
 ---
 name: ClinicalRouting
+filename: clinical-routing.md
 description: Clinical questions the AI must not answer and must route to the clinical team, including medication interactions, dose adjustment concerns, supplement safety, fertility, allergic reactions, and switching TRT providers.
 keywords:
   - "can I take this with my TRT"
@@ -102,6 +108,7 @@ priority: 3
 tools_needed: []
 ---
 name: Consultations
+filename: consultations.md
 description: Consultation booking, pre-consultation requirements checklist, missed appointments, rescheduling, and the post-results journey. Does not cover clinical treatment decisions or blood test kit logistics.
 keywords:
   - "how do I book my consultation"
@@ -118,6 +125,7 @@ priority: 4
 tools_needed: []
 ---
 name: DoseChanges
+filename: dose-changes.md
 description: Dose change requests for TRT medications including increase, decrease, pause, switch, titration levels, and the 4-week treatment gap safety rule. All dose changes require clinical escalation.
 keywords:
   - "I want to increase my dose"
@@ -136,6 +144,7 @@ tools_needed:
   - get_subscription_status
 ---
 name: Eligibility
+filename: eligibility.md
 description: TRT eligibility criteria, pre-screening red flags (age, location, cancer, BP), testosterone threshold rules, ineligibility handling, self-medicating patient onboarding, and result validity periods.
 keywords:
   - "am I eligible for TRT"
@@ -152,6 +161,7 @@ priority: 4
 tools_needed: []
 ---
 name: HcgShortage
+filename: hcg-shortage.md
 description: Global HCG supply shortage affecting the UK, HCG unavailability or delays, Clomid as an alternative (including contraindications), independent sourcing questions, and restock timeline enquiries.
 keywords:
   - "when will HCG be back in stock"
@@ -168,6 +178,7 @@ priority: 5
 tools_needed: []
 ---
 name: HowToUseMedication
+filename: how-to-use-medication.md
 description: Medication usage instructions for injectables (Cypionate, Sustanon, HCG), cream application, oral medications (Clomid, Tadalafil), crystallised Cypionate troubleshooting, faulty equipment, and ordering more medication. Does not cover storage, travel, or side effects.
 keywords:
   - "how do I inject testosterone"
@@ -186,6 +197,7 @@ tools_needed:
   - get_order_history
 ---
 name: MedicationStorage
+filename: medication-storage.md
 description: Storage guidance for all TRT medications (temperature, refrigeration rules for HCG), temperature excursion questions, domestic and international travel with medication, travel letters, and sharps disposal. Does not cover injection technique or delivery issues.
 keywords:
   - "how do I store testosterone"
@@ -202,6 +214,7 @@ priority: 6
 tools_needed: []
 ---
 name: OrderScheduleChanges
+filename: order-schedule-changes.md
 description: Requests to delay, advance, pause, or skip medication order dispatch timing. Clarifies the distinction between payment date changes (billing) and order schedule changes (dispatch). Does not cover payment date changes, full cancellations, or delivery tracking.
 keywords:
   - "can I delay my next order"
@@ -219,6 +232,7 @@ tools_needed:
   - get_order_history
 ---
 name: OrdersAndShipping
+filename: orders-and-shipping.md
 description: Medication order tracking, delivery status, dispatch timing, manual vs auto-dispatch rules, and the payment-does-not-equal-dispatch distinction. Covers medication orders only -- blood test kit delivery is in blood-tests.
 keywords:
   - "where is my medication"
@@ -237,6 +251,7 @@ tools_needed:
   - get_order_history
 ---
 name: Refunds
+filename: refunds.md
 description: Refund requests for orders, subscriptions, damaged or wrong items, and service complaints. The agent cannot process refunds -- all requests are escalated with gathered context. Does not cover billing failures or subscription management.
 keywords:
   - "I want a refund"
@@ -254,6 +269,7 @@ tools_needed:
   - get_order_history
 ---
 name: RequiredTasks
+filename: required-tasks.md
 description: Pre-treatment tasks patients must complete before progressing (ID verification, health questionnaire, blood tests, GP consent, payment details). Interprets task status from get_customer_tasks output and guides task prioritisation.
 keywords:
   - "what do I need to do next"
@@ -271,6 +287,7 @@ tools_needed:
   - get_customer_tasks
 ---
 name: RestartSubscription
+filename: restart-subscription.md
 description: Reactivating a previously cancelled TRT subscription, including time-off-treatment assessment, blood work requirements for returning patients, dose reset safety rules, and discount eligibility. Does not cover resuming from a pause or new patient sign-ups.
 keywords:
   - "I want to restart my TRT"
@@ -288,6 +305,7 @@ tools_needed:
   - get_subscription_status
 ---
 name: SideEffects
+filename: side-effects.md
 description: TRT side effect triage across three severity tiers -- common/expected (acne, injection site pain), clinical review needed (gynecomastia, hair loss, sleep apnoea), and emergency (chest pain, blood clots, suicidal thoughts). Does not cover dose change processing.
 keywords:
   - "I have acne since starting TRT"
@@ -305,6 +323,7 @@ priority: 2
 tools_needed: []
 ---
 name: Subscriptions
+filename: subscriptions.md
 description: Subscription status, AIOS vs Non-AIOS plan inclusions, billing cycles, payment date changes, next order/shipment queries, cancellation and pause requests, dose and plan change requests. Does not cover payment failures, refunds, or medication delivery tracking.
 keywords:
   - "what's included in my plan"
@@ -323,6 +342,7 @@ tools_needed:
   - get_subscription_status
 ---
 name: TrtPricing
+filename: trt-pricing.md
 description: TRT journey cost breakdowns (blood tests, consultation, monthly plans), plan comparison table, Refer-a-Friend programme, and discount/promo code issues. Does not cover subscription management or cancellation.
 keywords:
   - "how much does TRT cost"
@@ -340,6 +360,7 @@ priority: 5
 tools_needed: []
 ---
 name: Unsubscribe
+filename: unsubscribe.md
 description: Email and marketing unsubscribe requests (GDPR opt-out). Handles the disambiguation between email unsubscribe and subscription cancellation. Does not cover TRT subscription cancellation or account deletion (those escalate).
 keywords:
   - "unsubscribe from emails"
