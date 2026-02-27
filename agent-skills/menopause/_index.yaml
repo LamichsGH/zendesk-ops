@@ -1,4 +1,5 @@
 name: OrdersAndShipping
+filename: orders-and-shipping.md
 description: Handles order tracking, delivery status, and shipping queries for menopause treatments including HRT patches, oestrogen, and progesterone.
 keywords:
   - where is my HRT order
@@ -18,6 +19,7 @@ tools_needed:
   - get_order_history
 ---
 name: Refunds
+filename: refunds.md
 description: Handles refund requests for menopause products such as HRT, oestrogen, progesterone, and testosterone treatments.
 keywords:
   - I want a refund
@@ -37,6 +39,7 @@ tools_needed:
   - get_order_history
 ---
 name: SideEffects
+filename: side-effects.md
 description: Handles questions about HRT side effects, oestrogen and progesterone reactions, and menopause symptom management.
 keywords:
   - HRT side effects
@@ -55,6 +58,7 @@ priority: 2
 tools_needed: []
 ---
 name: Subscriptions
+filename: subscriptions.md
 description: Handles subscription status queries, payment dates, and cancellation requests for menopause HRT treatment plans.
 keywords:
   - cancel my subscription
@@ -74,6 +78,7 @@ tools_needed:
   - get_subscription_status
 ---
 name: Unsubscribe
+filename: unsubscribe.md
 description: Handles GDPR unsubscribe and marketing opt-out requests for the Menopause Care brand.
 keywords:
   - unsubscribe from emails
