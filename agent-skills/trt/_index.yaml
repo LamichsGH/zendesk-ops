@@ -1,0 +1,356 @@
+name: AccountAndPortal
+description: Login issues, account verification, MANUAL-to-Voy brand migration, portal navigation, ID verification, and GP details updates. Does not cover subscription changes, clinical questions, or blood test booking.
+keywords:
+  - "I can't log in"
+  - "password reset not working"
+  - "no reset email received"
+  - "phone number already linked"
+  - "can't access my account"
+  - "MANUAL to Voy"
+  - "reCAPTCHA not working"
+  - "how do I verify my ID"
+  - "can't find my results in the portal"
+  - "how do I update my GP details"
+  - "account locked"
+  - "forgot my password"
+priority: 5
+tools_needed:
+  - get_subscription_status
+---
+name: AppFeatures
+description: Voy app navigation, tab features (Home, Progress, Plan, Chat), profile settings, download links, bug reporting, and country/region changes. Does not cover order tracking details, login issues, or medication tutorials.
+keywords:
+  - "how do I use the app"
+  - "where do I find my results in the app"
+  - "app not working"
+  - "can't find the plan tab"
+  - "how do I download the app"
+  - "app bug"
+  - "steps tracking not showing"
+  - "how do I change my country in the app"
+  - "what does the progress tab show"
+  - "app keeps crashing"
+priority: 7
+tools_needed: []
+---
+name: BillingAndPayments
+description: Payment failures, failed transactions, discount code issues, and billing confusion (e.g. paid but no medication). Does not cover refund requests (see refunds) or subscription plan management (see subscriptions).
+keywords:
+  - "payment failed"
+  - "I was charged but nothing happened"
+  - "discount code not working"
+  - "Apple Pay error"
+  - "I paid but didn't get my medication"
+  - "double charged"
+  - "forgot to apply discount code"
+  - "how do I pay for my subscription"
+  - "payment taken but shows failed"
+  - "promo code doesn't work"
+priority: 3
+tools_needed:
+  - get_subscription_status
+---
+name: BiomarkerGlossary
+description: Generic definitions of biomarkers tested in TRT blood panels (hormones, FBC, LFT, metabolic markers). Never interprets patient-specific results or reference ranges -- only provides textbook definitions.
+keywords:
+  - "what does testosterone mean on my results"
+  - "what is oestradiol"
+  - "what does SHBG stand for"
+  - "what is haematocrit"
+  - "what are liver function markers"
+  - "what does PSA test for"
+  - "explain my blood test markers"
+  - "what is free testosterone"
+  - "what does cholesterol mean"
+  - "what is HbA1c"
+priority: 6
+tools_needed: []
+---
+name: BloodTests
+description: All blood test topics including kit delivery, finger-prick sample collection, return shipping, lab processing, results availability, replacement kits, venous alternatives, nurse visits, and the two-test requirement. Does not cover medication delivery.
+keywords:
+  - "where is my test kit"
+  - "blood test results not showing"
+  - "how do I do the finger prick test"
+  - "my sample failed"
+  - "when will I get my results"
+  - "can I do a venous blood test instead"
+  - "kit hasn't arrived"
+  - "do I need another blood test"
+  - "nurse visit for blood test"
+  - "Randox appointment"
+  - "blood test tracking"
+  - "not enough blood in the sample"
+priority: 1
+tools_needed:
+  - get_order_history
+---
+name: ClinicalRouting
+description: Clinical questions the AI must not answer and must route to the clinical team, including medication interactions, dose adjustment concerns, supplement safety, fertility, allergic reactions, and switching TRT providers.
+keywords:
+  - "can I take this with my TRT"
+  - "will my other medication interact"
+  - "is it safe to take supplements with testosterone"
+  - "I want to change my dose"
+  - "switching from NHS TRT"
+  - "fertility and testosterone"
+  - "allergic reaction to my injection"
+  - "can I take finasteride with TRT"
+  - "coming from another TRT clinic"
+  - "is ashwagandha safe with TRT"
+priority: 3
+tools_needed: []
+---
+name: Consultations
+description: Consultation booking, pre-consultation requirements checklist, missed appointments, rescheduling, and the post-results journey. Does not cover clinical treatment decisions or blood test kit logistics.
+keywords:
+  - "how do I book my consultation"
+  - "I can't find the booking option"
+  - "I missed my appointment"
+  - "what happens in the consultation"
+  - "I paid but can't book"
+  - "what do I need before my consultation"
+  - "can I reschedule my appointment"
+  - "booking tab has disappeared"
+  - "do I need to pay for the consultation again"
+  - "what happens after my blood results"
+priority: 4
+tools_needed: []
+---
+name: DoseChanges
+description: Dose change requests for TRT medications including increase, decrease, pause, switch, titration levels, and the 4-week treatment gap safety rule. All dose changes require clinical escalation.
+keywords:
+  - "I want to increase my dose"
+  - "can I lower my testosterone dose"
+  - "I want to switch medication"
+  - "can I pause my TRT"
+  - "I've been off testosterone for a month"
+  - "what titration level am I on"
+  - "I want to try a different testosterone"
+  - "can I go up to the next dose"
+  - "I stopped injecting for a few weeks"
+  - "switch from Sustanon to Cypionate"
+priority: 2
+tools_needed:
+  - get_order_history
+  - get_subscription_status
+---
+name: Eligibility
+description: TRT eligibility criteria, pre-screening red flags (age, location, cancer, BP), testosterone threshold rules, ineligibility handling, self-medicating patient onboarding, and result validity periods.
+keywords:
+  - "am I eligible for TRT"
+  - "my testosterone level is too high"
+  - "can I get TRT if I'm under 18"
+  - "do you treat patients outside the UK"
+  - "I'm already on testosterone from another provider"
+  - "I was told I'm not eligible"
+  - "what testosterone level do I need"
+  - "I've been self-medicating testosterone"
+  - "are my blood test results still valid"
+  - "can I use my own blood test results"
+priority: 4
+tools_needed: []
+---
+name: HcgShortage
+description: Global HCG supply shortage affecting the UK, HCG unavailability or delays, Clomid as an alternative (including contraindications), independent sourcing questions, and restock timeline enquiries.
+keywords:
+  - "when will HCG be back in stock"
+  - "why can't I get HCG"
+  - "is there an alternative to HCG"
+  - "can I use Clomid instead of HCG"
+  - "HCG shortage"
+  - "can I source my own HCG"
+  - "trying to conceive and need HCG"
+  - "my HCG order is delayed"
+  - "will HCG come back"
+  - "fertility concerns with HCG shortage"
+priority: 5
+tools_needed: []
+---
+name: HowToUseMedication
+description: Medication usage instructions for injectables (Cypionate, Sustanon, HCG), cream application, oral medications (Clomid, Tadalafil), crystallised Cypionate troubleshooting, faulty equipment, and ordering more medication. Does not cover storage, travel, or side effects.
+keywords:
+  - "how do I inject testosterone"
+  - "how do I use the cream"
+  - "my Cypionate has crystals in it"
+  - "needle broke during injection"
+  - "how do I mix HCG"
+  - "what needle size do I use"
+  - "how do I order more medication"
+  - "injection training video call"
+  - "how to draw up Sustanon"
+  - "when do I take Clomid"
+  - "faulty syringe"
+priority: 4
+tools_needed:
+  - get_order_history
+---
+name: MedicationStorage
+description: Storage guidance for all TRT medications (temperature, refrigeration rules for HCG), temperature excursion questions, domestic and international travel with medication, travel letters, and sharps disposal. Does not cover injection technique or delivery issues.
+keywords:
+  - "how do I store testosterone"
+  - "does HCG need to go in the fridge"
+  - "can I travel with my medication"
+  - "do I need a travel letter"
+  - "my medication was left in the heat"
+  - "how do I dispose of sharps"
+  - "can I take testosterone on a plane"
+  - "medication got too hot"
+  - "where do I get a sharps bin"
+  - "can I freeze HCG"
+priority: 6
+tools_needed: []
+---
+name: OrderScheduleChanges
+description: Requests to delay, advance, pause, or skip medication order dispatch timing. Clarifies the distinction between payment date changes (billing) and order schedule changes (dispatch). Does not cover payment date changes, full cancellations, or delivery tracking.
+keywords:
+  - "can I delay my next order"
+  - "I want to push back my medication"
+  - "can I get my order sooner"
+  - "I want to skip my next order"
+  - "pause my orders for a month"
+  - "can I change when my medication ships"
+  - "I have enough medication for now"
+  - "bring my next order forward"
+  - "I'm going on holiday, delay my order"
+  - "stop sending medication temporarily"
+priority: 3
+tools_needed:
+  - get_order_history
+---
+name: OrdersAndShipping
+description: Medication order tracking, delivery status, dispatch timing, manual vs auto-dispatch rules, and the payment-does-not-equal-dispatch distinction. Covers medication orders only -- blood test kit delivery is in blood-tests.
+keywords:
+  - "where is my medication"
+  - "my order hasn't arrived"
+  - "tracking not updating"
+  - "when will my testosterone be dispatched"
+  - "I paid but no medication shipped"
+  - "how do I place an order in the app"
+  - "order stuck in processing"
+  - "how long does delivery take"
+  - "when should I reorder"
+  - "my medication hasn't been sent"
+  - "order status"
+priority: 1
+tools_needed:
+  - get_order_history
+---
+name: Refunds
+description: Refund requests for orders, subscriptions, damaged or wrong items, and service complaints. The agent cannot process refunds -- all requests are escalated with gathered context. Does not cover billing failures or subscription management.
+keywords:
+  - "I want a refund"
+  - "can I get my money back"
+  - "I received the wrong medication"
+  - "my order arrived damaged"
+  - "charged after I cancelled"
+  - "I was overcharged"
+  - "this isn't working, I want a refund"
+  - "double charged on my subscription"
+  - "refund for blood test kit"
+  - "how long does a refund take"
+priority: 3
+tools_needed:
+  - get_order_history
+---
+name: RequiredTasks
+description: Pre-treatment tasks patients must complete before progressing (ID verification, health questionnaire, blood tests, GP consent, payment details). Interprets task status from get_customer_tasks output and guides task prioritisation.
+keywords:
+  - "what do I need to do next"
+  - "my tasks aren't complete"
+  - "how do I upload my ID"
+  - "health questionnaire not working"
+  - "GP consent form"
+  - "what's blocking my treatment"
+  - "I completed everything but nothing happened"
+  - "outstanding tasks on my account"
+  - "how do I finish my onboarding"
+  - "my task says pending"
+priority: 4
+tools_needed:
+  - get_customer_tasks
+---
+name: RestartSubscription
+description: Reactivating a previously cancelled TRT subscription, including time-off-treatment assessment, blood work requirements for returning patients, dose reset safety rules, and discount eligibility. Does not cover resuming from a pause or new patient sign-ups.
+keywords:
+  - "I want to restart my TRT"
+  - "can I come back after cancelling"
+  - "reactivate my subscription"
+  - "I cancelled but want to start again"
+  - "how do I resume treatment"
+  - "do I need new blood tests to restart"
+  - "returning patient"
+  - "I stopped TRT and want to come back"
+  - "will I start on the same dose"
+  - "rejoin after cancellation"
+priority: 4
+tools_needed:
+  - get_subscription_status
+---
+name: SideEffects
+description: TRT side effect triage across three severity tiers -- common/expected (acne, injection site pain), clinical review needed (gynecomastia, hair loss, sleep apnoea), and emergency (chest pain, blood clots, suicidal thoughts). Does not cover dose change processing.
+keywords:
+  - "I have acne since starting TRT"
+  - "injection site is red and sore"
+  - "mood swings on testosterone"
+  - "chest pain after injection"
+  - "hair falling out on TRT"
+  - "breast tenderness"
+  - "swelling at injection site"
+  - "feeling anxious since starting treatment"
+  - "oily skin since starting testosterone"
+  - "trouble sleeping on TRT"
+  - "blood pressure feels high"
+priority: 2
+tools_needed: []
+---
+name: Subscriptions
+description: Subscription status, AIOS vs Non-AIOS plan inclusions, billing cycles, payment date changes, next order/shipment queries, cancellation and pause requests, dose and plan change requests. Does not cover payment failures, refunds, or medication delivery tracking.
+keywords:
+  - "what's included in my plan"
+  - "when is my next payment"
+  - "I want to cancel my subscription"
+  - "can I pause my subscription"
+  - "what plan am I on"
+  - "change my payment date"
+  - "AIOS vs non-AIOS"
+  - "when is my next order due"
+  - "I want to upgrade my plan"
+  - "when is my next blood test"
+  - "cancel my TRT subscription"
+priority: 2
+tools_needed:
+  - get_subscription_status
+---
+name: TrtPricing
+description: TRT journey cost breakdowns (blood tests, consultation, monthly plans), plan comparison table, Refer-a-Friend programme, and discount/promo code issues. Does not cover subscription management or cancellation.
+keywords:
+  - "how much does TRT cost"
+  - "what are the monthly plans"
+  - "how much is the blood test"
+  - "consultation fee"
+  - "what's the cheapest plan"
+  - "refer a friend"
+  - "do I get a discount"
+  - "what's included in the price"
+  - "how much is Cypionate per month"
+  - "is the blood test free"
+  - "promo code"
+priority: 5
+tools_needed: []
+---
+name: Unsubscribe
+description: Email and marketing unsubscribe requests (GDPR opt-out). Handles the disambiguation between email unsubscribe and subscription cancellation. Does not cover TRT subscription cancellation or account deletion (those escalate).
+keywords:
+  - "unsubscribe from emails"
+  - "stop sending me emails"
+  - "too many marketing emails"
+  - "how do I opt out"
+  - "remove me from your mailing list"
+  - "I keep getting spam from you"
+  - "GDPR unsubscribe"
+  - "stop all communications"
+  - "I don't want promotional emails"
+  - "where is the unsubscribe button"
+priority: 5
+tools_needed: []
