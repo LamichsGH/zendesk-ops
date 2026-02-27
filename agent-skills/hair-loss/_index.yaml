@@ -1,0 +1,91 @@
+name: OrdersAndShipping
+description: Handles order tracking, delivery status, and shipping queries for hair loss treatments including finasteride and minoxidil.
+keywords:
+  - where is my order
+  - tracking number
+  - when will my finasteride arrive
+  - delivery update
+  - my minoxidil hasn't arrived
+  - shipping delay
+  - hair loss order status
+  - package not delivered
+  - when will I receive my treatment
+  - lost in transit
+  - expected delivery date
+  - dispatched but not arrived
+priority: 1
+tools_needed:
+  - get_order_history
+---
+name: Refunds
+description: Handles refund requests for hair loss products such as finasteride, minoxidil, and biotin treatments.
+keywords:
+  - I want a refund
+  - money back
+  - finasteride refund
+  - minoxidil didn't work
+  - hair loss treatment refund
+  - charged incorrectly
+  - overcharged
+  - double charged
+  - get my money back
+  - refund request
+  - not happy with my order
+  - return my hair loss product
+priority: 2
+tools_needed:
+  - get_order_history
+---
+name: SideEffects
+description: Handles questions about finasteride and minoxidil side effects, shedding concerns, and treatment timeline expectations.
+keywords:
+  - finasteride side effects
+  - minoxidil reaction
+  - hair shedding
+  - losing more hair since starting treatment
+  - how long until I see results
+  - topical side effects
+  - scalp irritation
+  - is shedding normal
+  - when will my hair grow back
+  - feeling unwell on finasteride
+  - sexual side effects
+  - treatment not working yet
+priority: 2
+tools_needed: []
+---
+name: Subscriptions
+description: Handles subscription status queries, payment dates, and cancellation requests for hair loss treatment plans.
+keywords:
+  - cancel my subscription
+  - when is my next payment
+  - pause my hair loss plan
+  - change my subscription
+  - subscription status
+  - stop my finasteride deliveries
+  - skip next order
+  - how do I cancel
+  - next delivery date
+  - update my plan
+  - switch treatment
+  - stop charging me
+priority: 2
+tools_needed:
+  - get_subscription_status
+---
+name: Unsubscribe
+description: Handles GDPR unsubscribe and marketing opt-out requests for the Manual hair loss brand.
+keywords:
+  - unsubscribe from emails
+  - stop sending me emails
+  - marketing emails
+  - opt out
+  - remove me from mailing list
+  - too many emails
+  - GDPR request
+  - delete my data
+  - stop contacting me
+  - email preferences
+  - don't want promotional emails
+priority: 4
+tools_needed: []
