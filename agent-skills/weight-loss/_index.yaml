@@ -1,0 +1,314 @@
+name: AccountManagement
+description: Covers account detail updates (address, phone, name, email, DOB, GP details) and billing history/receipts. Does NOT cover login issues, subscription changes, or payment method updates.
+keywords:
+  - change my address
+  - update my phone number
+  - how do I change my email
+  - update my name on the account
+  - I moved house
+  - change my GP details
+  - update my doctor information
+  - where can I see my receipts
+  - billing history
+  - update my personal details
+  - my address is wrong
+priority: 4
+tools_needed:
+  - get_subscription_status
+---
+name: AppFeatures
+description: Covers Voy app navigation, tab features, bug reporting, medication switching, and in-app tracking (injections, meals, weight). Does NOT cover order tracking, account detail edits, or login issues.
+keywords:
+  - how do I use the app
+  - where do I find my progress
+  - app is not working
+  - how to log my injection
+  - track my weight in the app
+  - meal tracking
+  - switch medication in the app
+  - app bug
+  - download the voy app
+  - how to log my meal
+  - change country in the app
+priority: 6
+tools_needed: []
+---
+name: Coaching
+description: Covers the coaching programme -- what it includes, booking and rescheduling coaching calls, and coach assignment. Does NOT cover 1-to-1 clinical consultations, webinars, or the Getting Started Session (see self-serve-resources).
+keywords:
+  - how do I book a coaching call
+  - who is my coach
+  - can I change my coach
+  - what does coaching include
+  - reschedule my coaching session
+  - cancel my coaching call
+  - is coaching included in my plan
+  - do I get a coach
+  - when is my next coaching session
+priority: 8
+tools_needed:
+  - get_subscription_status
+---
+name: DoseChanges
+description: Covers dose change requests, titration schedules for Wegovy and Mounjaro, missed doses, treatment gaps over 4 weeks, medication switching, and the 3-day order cutoff rule. Does NOT cover side effects from dose changes or injection technique.
+keywords:
+  - increase my dose
+  - change my dosage
+  - I want to go up a dose
+  - titration schedule
+  - I missed my injection
+  - I skipped a dose
+  - switch from wegovy to mounjaro
+  - switch from mounjaro to wegovy
+  - I haven't taken my medication for weeks
+  - can I stay on the same dose
+  - when does my dose go up
+  - decrease my dose
+priority: 2
+tools_needed:
+  - get_order_history
+  - get_subscription_status
+---
+name: HowToUseMedication
+description: Covers injection instructions for Wegovy and Mounjaro pens, flow checks, faulty pen diagnosis, pen damaged in transit, glucomannan usage, and supply kit contents. Does NOT cover medication storage, side effects, or dose changes.
+keywords:
+  - how do I inject
+  - how to use my pen
+  - injection instructions
+  - my pen is not working
+  - faulty pen
+  - how to use wegovy
+  - how to use mounjaro
+  - needle stuck
+  - pen broken
+  - glucomannan how to take
+  - what's in my first order
+  - pen won't click
+priority: 5
+tools_needed: []
+---
+name: LifestyleGuidance
+description: Covers general nutrition, exercise, plateau reassurance, mindset, and habit formation for active weight-loss patients. Does NOT cover personalised meal plans, calorie targets, maintenance phase guidance, or clinical side effects.
+keywords:
+  - what should I eat on wegovy
+  - exercise while on mounjaro
+  - I've hit a plateau
+  - not losing weight anymore
+  - how much water should I drink
+  - weight loss stalled
+  - emotional eating
+  - motivation tips
+  - healthy eating on GLP-1
+  - I feel stuck
+  - protein intake
+priority: 7
+tools_needed: []
+---
+name: Maintenance
+description: Covers maintenance phase for patients at or near goal weight -- down-titration, stopping treatment, treatment breaks, and switching medications for affordability. Does NOT cover dose changes during active weight loss or subscription cancellation.
+keywords:
+  - I've reached my goal weight
+  - how do I stop treatment
+  - can I reduce my dose gradually
+  - maintenance phase
+  - I want to come off medication
+  - down-titration
+  - take a break from treatment
+  - what happens when I stop
+  - keeping weight off
+  - do I need to stay on medication forever
+priority: 6
+tools_needed: []
+---
+name: MedicationStorage
+description: Covers storage requirements (fridge and room temperature rules) for Wegovy and Mounjaro, travel with medication, sharps disposal, and requesting prescription copies. Does NOT cover injection technique or cold chain concerns on delivery.
+keywords:
+  - how to store my medication
+  - can I keep it out of the fridge
+  - travelling with my pen
+  - how long can wegovy be at room temperature
+  - mounjaro storage
+  - sharps disposal
+  - how to dispose of needles
+  - prescription copy
+  - my medication was left out
+  - flying with injection
+  - 42 day rule
+priority: 6
+tools_needed: []
+---
+name: OrdersAndShipping
+description: Covers order status (WISMO), clinical approval status, shipping timelines, tracking, delivery issues, cold chain integrity, address changes for dispatched orders, and subscription cycle auto-orders. Does NOT cover payment failures, subscription changes, or medication usage.
+keywords:
+  - where is my order
+  - when will my medication arrive
+  - tracking number
+  - my order hasn't arrived
+  - delivery status
+  - order stuck
+  - when is my next order
+  - my package is lost
+  - order not dispatched
+  - has my order been approved
+  - cold chain
+  - change address on dispatched order
+  - royal mail tracking
+priority: 1
+tools_needed:
+  - get_order_history
+  - get_customer_tasks
+---
+name: Payments
+description: Covers payment failures, auto-retry schedules, payment method updates, billing cycles, and first-order billing. Does NOT cover refunds, pricing questions, or order status beyond payment state.
+keywords:
+  - my payment failed
+  - card declined
+  - how do I update my payment method
+  - change my card
+  - when will I be charged
+  - billing date
+  - payment not going through
+  - retry my payment
+  - accepted payment methods
+  - why was my card rejected
+priority: 3
+tools_needed:
+  - get_subscription_status
+---
+name: PricingAndCredits
+description: Covers pricing inquiries, the credit/wallet system, refer-a-friend programme, first-order discounts, longer plan pricing, and Voyager programme. Does NOT cover payment failures or subscription plan changes.
+keywords:
+  - how much does it cost
+  - price of wegovy
+  - price of mounjaro
+  - do you have a discount
+  - refer a friend
+  - how do credits work
+  - wallet balance
+  - 3 month plan price
+  - first order discount
+  - is there a cheaper plan
+  - voyager programme
+priority: 5
+tools_needed:
+  - get_subscription_status
+---
+name: Refunds
+description: Covers refund requests, refund status queries, returns policy, Money Back Guarantee, and billing discrepancies. Does NOT cover payment failures or retry -- those go to payments.
+keywords:
+  - I want a refund
+  - where is my refund
+  - can I return my medication
+  - money back guarantee
+  - I was charged twice
+  - unexpected charge
+  - billing discrepancy
+  - cancel and get my money back
+  - refund status
+  - I didn't receive my order can I get a refund
+  - overcharged
+priority: 3
+tools_needed:
+  - get_order_history
+---
+name: RequiredTasks
+description: Covers pre-order tasks patients must complete before medication approval -- ID verification, BMI photo, video BMI call, proof of previous prescription, weight reading, and first-order billing reservation. Does NOT cover order status after tasks are completed.
+keywords:
+  - ID verification
+  - upload my ID
+  - BMI photo
+  - how do I take my BMI picture
+  - video call for BMI
+  - proof of prescription
+  - what do I need to do before my order
+  - pending tasks
+  - my order is waiting for verification
+  - why hasn't my order been approved
+  - what documents do I need
+priority: 4
+tools_needed:
+  - get_customer_tasks
+---
+name: RescuePacks
+description: Covers rescue pack care packages (Cyclizine and Loperamide) included with first orders -- contents, dosage, contraindications, side effects, and reorder requests. Does NOT cover broader side effect management beyond rescue pack medications.
+keywords:
+  - what is a rescue pack
+  - cyclizine dosage
+  - loperamide how to take
+  - anti nausea tablets
+  - anti diarrhoea capsules
+  - I didn't get a rescue pack
+  - can I get more cyclizine
+  - rescue pack reorder
+  - nausea tablets from my first order
+  - what came with my first order
+priority: 7
+tools_needed: []
+---
+name: SelfServeResources
+description: Covers webinars, live talks, educational content in the Voy app, and the Getting Started Session (group onboarding). Does NOT cover 1-to-1 coaching sessions or coach assignment -- those go to coaching.
+keywords:
+  - how do I join the getting started session
+  - webinar schedule
+  - educational content
+  - live talks
+  - nutrition webinar
+  - can't join the webinar
+  - where do I find learning resources
+  - onboarding session
+  - group session
+  - exercise webinar
+priority: 6
+tools_needed:
+  - get_subscription_status
+---
+name: SideEffects
+description: Covers side effect triage and severity classification (3 tiers) for Wegovy and Mounjaro, concurrent medication rules, and injection site reactions. Does NOT cover rescue pack medication details or dose changes due to side effects.
+keywords:
+  - I feel sick after my injection
+  - nausea from wegovy
+  - mounjaro side effects
+  - diarrhoea after injection
+  - constipation from medication
+  - headache after taking mounjaro
+  - injection site reaction
+  - can I take paracetamol with wegovy
+  - vomiting after injection
+  - feeling dizzy
+  - stomach pain
+  - heartburn
+priority: 2
+tools_needed: []
+---
+name: Subscriptions
+description: Covers subscription cancellation (individual orders vs entire plan), pausing, rescheduling, restarting, plan type changes (28-day vs longer plans), and cancellation fees. Does NOT cover payment failures, refunds, or dose changes.
+keywords:
+  - cancel my subscription
+  - pause my plan
+  - skip my next order
+  - restart my subscription
+  - change my plan
+  - switch to 3 month plan
+  - cancellation fee
+  - how do I cancel
+  - put my subscription on hold
+  - reschedule my next order
+  - I want to stop my plan
+priority: 2
+tools_needed:
+  - get_subscription_status
+---
+name: Unsubscribe
+description: Covers unsubscribing from marketing emails, promotional communications, and newsletter opt-outs. Does NOT cover subscription cancellation (stopping treatment/plan) -- those go to subscriptions.
+keywords:
+  - unsubscribe from emails
+  - stop sending me emails
+  - too many emails
+  - opt out of marketing
+  - stop the spam
+  - I keep getting promotional emails
+  - how do I unsubscribe
+  - remove me from mailing list
+  - stop newsletter
+priority: 5
+tools_needed: []
