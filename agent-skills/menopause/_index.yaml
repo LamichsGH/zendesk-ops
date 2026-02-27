@@ -1,0 +1,91 @@
+name: OrdersAndShipping
+description: Handles order tracking, delivery status, and shipping queries for menopause treatments including HRT patches, oestrogen, and progesterone.
+keywords:
+  - where is my HRT order
+  - tracking number
+  - when will my patches arrive
+  - delivery update
+  - my oestrogen hasn't arrived
+  - shipping delay
+  - menopause order status
+  - package not delivered
+  - when will I receive my HRT
+  - lost in transit
+  - expected delivery date
+  - progesterone not dispatched
+priority: 1
+tools_needed:
+  - get_order_history
+---
+name: Refunds
+description: Handles refund requests for menopause products such as HRT, oestrogen, progesterone, and testosterone treatments.
+keywords:
+  - I want a refund
+  - money back
+  - HRT refund
+  - menopause treatment refund
+  - patches didn't work
+  - charged incorrectly
+  - overcharged
+  - double charged
+  - get my money back
+  - refund request
+  - not happy with my HRT
+  - return my menopause medication
+priority: 2
+tools_needed:
+  - get_order_history
+---
+name: SideEffects
+description: Handles questions about HRT side effects, oestrogen and progesterone reactions, and menopause symptom management.
+keywords:
+  - HRT side effects
+  - oestrogen reaction
+  - progesterone side effects
+  - hot flushes getting worse
+  - patches causing irritation
+  - bleeding on HRT
+  - weight gain on HRT
+  - mood changes since starting treatment
+  - is this normal on oestrogen
+  - feeling unwell on progesterone
+  - testosterone side effects
+  - how long until HRT works
+priority: 2
+tools_needed: []
+---
+name: Subscriptions
+description: Handles subscription status queries, payment dates, and cancellation requests for menopause HRT treatment plans.
+keywords:
+  - cancel my subscription
+  - when is my next payment
+  - pause my HRT plan
+  - change my subscription
+  - subscription status
+  - stop my menopause deliveries
+  - skip next order
+  - how do I cancel
+  - next delivery date
+  - update my HRT plan
+  - switch to patches
+  - stop charging me
+priority: 2
+tools_needed:
+  - get_subscription_status
+---
+name: Unsubscribe
+description: Handles GDPR unsubscribe and marketing opt-out requests for the Menopause Care brand.
+keywords:
+  - unsubscribe from emails
+  - stop sending me emails
+  - marketing emails
+  - opt out
+  - remove me from mailing list
+  - too many emails
+  - GDPR request
+  - delete my data
+  - stop contacting me
+  - email preferences
+  - don't want promotional emails
+priority: 4
+tools_needed: []
