@@ -31,6 +31,30 @@ IF patient says "phone number already linked to an account":
 
 ---
 
+## Optimale to Voy Migration
+
+Some patients migrated from Optimale (a previous TRT provider) to Voy. These patients have specific plan rules that differ from standard Voy subscriptions.
+
+⚠️ CRITICAL: Optimale-to-Voy memberships do NOT include blood tests in the standard subscription. This is different from standard Voy plans.
+
+### Optimale Membership Blood Test Pricing
+- Monitoring blood test kit: £80 (price-matched to Optimale pricing)
+- Clinic visit (kit + appointment): £115
+- Nurse home visit: £150
+
+IF patient mentions Optimale, was previously with Optimale, or appears to have migrated from Optimale:
+  → Do NOT tell them monitoring blood tests are free — they may not be on their plan
+  → Check subscription data to confirm what is included
+  → IF plan details unclear: confidence = 0.55 (ESCALATE)
+  → "Let me check your current plan details to make sure I give you the right information about your blood test options."
+
+IF Optimale patient asks about upgrading to AIOS (all-inclusive):
+  → confidence = 0.55 (ESCALATE)
+  → The AIOS plan includes blood tests, injection supplies, clinic visits, and doctor letters
+  → "I've passed this to our team who can arrange the plan change for you."
+
+---
+
 ## Login Troubleshooting
 
 IF patient says "password reset not working" or "no reset email received":

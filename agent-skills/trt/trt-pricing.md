@@ -30,7 +30,7 @@ Cross-references: `subscriptions.md` for plan management and cancellation detail
 ### Step 4: Monthly Subscription (Treatment)
 - Pricing varies by treatment plan — see full plan table below
 - All plans include: medication, injection supplies, ongoing blood monitoring, clinical support, repeat prescriptions
-- Monitoring blood tests are FREE with active subscription
+- Monitoring blood tests are FREE with active subscription (except Optimale-to-Voy migrations — see account-and-portal.md)
 
 ⚠️ Always search KB with file_search for the latest pricing — prices may have been updated since this file was written.
 
@@ -187,6 +187,7 @@ IF existing patient (active subscription) asks to BUY a blood test:
   → "Monitoring blood tests are included free with your subscription — you don't need to purchase one separately."
   → Guide them to their portal tasks section
   → Do NOT link to the enhanced test purchase page
+  → ⚠️ EXCEPTION: If the patient migrated from Optimale, blood tests may NOT be included — see account-and-portal.md. Do NOT tell Optimale patients their tests are free without verifying their plan.
 
 IF existing patient asks about "enhanced test":
   → Check context — they may have been asked by the system to complete one
@@ -196,6 +197,7 @@ IF existing patient asks about "enhanced test":
 IF existing patient asks about blood test schedule:
   → confidence = 0.90 (SOLVE)
   → "Your monitoring blood tests are at 3 months, 6 months, and then every 6 months after that — all included free with your subscription."
+  → ⚠️ EXCEPTION: Optimale migration patients — omit the "free" claim and check their plan. See account-and-portal.md.
 
 ---
 

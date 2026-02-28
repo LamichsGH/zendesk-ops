@@ -465,9 +465,10 @@ IF patient mentions a clinic appointment, doctor appointment, or time pressure:
   - ONLY recommend to new patients
 
 **Monitoring (BT2)**: Patient already on TRT with active subscription
-  - FREE with subscription
+  - FREE with subscription for standard Voy plans
+  - ⚠️ EXCEPTION: Optimale-to-Voy migration patients — blood tests may NOT be included. See account-and-portal.md for Optimale pricing (kit £80, clinic £115, nurse £150)
   - Do NOT recommend Enhanced test to existing patients
-  - If existing patient asks to buy a blood test: explain monitoring tests are free, escalate if needed
+  - If existing patient asks to buy a blood test AND they appear to be an Optimale migration: do NOT say it's free — check their plan or escalate
 
 ⚠️ Saliva tests are NOT accepted for the TRT pathway. Only blood tests.
 
