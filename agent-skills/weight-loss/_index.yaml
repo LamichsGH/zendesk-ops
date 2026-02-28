@@ -330,3 +330,34 @@ keywords:
   - stop newsletter
 priority: 5
 tools_needed: []
+
+---
+name: GdprAndComplaints
+filename: gdpr-and-complaints.md
+folder: shared
+description: Formal complaints, product feedback and suggestions, GDPR data access/deletion requests, data privacy questions, email unsubscribe, notification preferences, pharmacy registration, medication sourcing, account deletion, and money back guarantee. Covers any message where the patient is providing feedback, pointing out errors or inconsistencies, suggesting improvements, or expressing dissatisfaction — even if they do not use the word "complaint". Does not cover subscription cancellation, refund processing, or billing disputes.
+keywords:
+  - "I want to make a complaint"
+  - "this is unacceptable"
+  - "your instructions are wrong"
+  - "inconsistent instructions"
+  - "conflicting information"
+  - "why do you send"
+  - "I suggest you"
+  - "you should"
+  - "terrible service"
+  - "very disappointed"
+  - "not good enough"
+  - "I want to speak to a manager"
+  - "delete my data"
+  - "Subject Access Request"
+  - "unsubscribe from emails"
+  - "do you sell my data"
+  - "delete my account"
+  - "money back guarantee"
+  - "feedback"
+  - "your packaging"
+  - "confusing instructions"
+  - "poor quality"
+priority: 2
+tools_needed: []
