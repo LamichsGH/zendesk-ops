@@ -140,12 +140,26 @@ IF patient asks general questions about data privacy ("how do you use my data", 
 
 ### C1: Email/Marketing Unsubscribe
 
-IF patient wants to stop receiving marketing emails ("unsubscribe from emails", "stop sending me emails", "too many emails"):
+**⚠️ FIRST: Check if the patient has ALREADY TRIED to unsubscribe.**
+
+IF the patient says they already tried to unsubscribe and it didn't work (e.g. "unsubscribe link bounced", "comes back as undeliverable", "I've tried but it won't let me", "I already unsubscribed but still getting emails", "can't reply to texts", "can't find settings"):
+  → confidence = 0.50 (ESCALATE)
+  → Do NOT repeat the standard unsubscribe instructions — the patient just told you they don't work
+  → Acknowledge the issue, apologise, and confirm you're escalating to the team to action it manually
+  → The team can remove them from marketing lists on the backend
+
+**Response template (self-serve failed):**
+→ "I'm sorry about this — it's really frustrating when the unsubscribe process doesn't work as it should. I've passed this directly to our team so they can remove you from our marketing emails and texts on their end. You should stop receiving them shortly. Apologies again for the inconvenience."
+
+**Internal note guidance (self-serve failed):**
+→ "Issue: Patient reports unsubscribe link is not working (bouncing/undeliverable) and is receiving excessive marketing emails and SMS. Patient has already attempted self-serve unsubscribe.\nAction: Manually remove patient from all marketing email and SMS lists. Verify unsubscribe mechanism is functioning."
+
+IF patient wants to stop receiving marketing emails and has NOT already tried ("unsubscribe from emails", "stop sending me emails", "too many emails", "how do I unsubscribe"):
   → confidence = 0.85 (SOLVE)
   → Provide unsubscribe instructions
   → ⚠️ Distinguish from subscription cancellation — if ambiguous, cross-reference pathway-specific `subscriptions.md`
 
-**Response template:**
+**Response template (standard):**
 → "You can unsubscribe from marketing emails by clicking the 'Unsubscribe' link at the bottom of any marketing email you've received. This will be processed straight away. Please note that you'll still receive important emails related to your treatment and account for safety and service reasons."
 
 ### C2: Notification Preferences
@@ -281,7 +295,12 @@ For all ESCALATE decisions in this skill file, include the following in the inte
 **Response (confidence = 0.50, ESCALATE):** "Thanks for letting us know about the packaging — that's really useful feedback. I've passed this to our operations team so they can look into it. We appreciate you taking the time to flag this."
 **Internal note:** "Issue: Patient feedback about oversized packaging for medication delivery.\nAction: Escalate to operations team for packaging review."
 
-### Example 10: Medication Sourcing Concern
+### Example 10: Unsubscribe — Self-Serve Failed
+**Patient:** "Since ending my plan I am being bombarded with texts and emails offering discounts to rejoin. I have tried to unsubscribe via the email but it comes back as undeliverable. I cannot find anywhere in the app where I can change my communication preferences. Please remove me from your mailing and text lists."
+**Response (confidence = 0.50, ESCALATE):** "I'm sorry about this — it's really frustrating when the unsubscribe process doesn't work as it should. I've passed this directly to our team so they can remove you from our marketing emails and texts on their end. You should stop receiving them shortly. Apologies again for the inconvenience."
+**Internal note:** "Issue: Patient reports excessive marketing emails and SMS after cancelling plan. Unsubscribe link bounces (undeliverable). Cannot find communication preferences in app. Patient has already tried self-serve.\nAction: Manually remove patient from all marketing email and SMS lists. Check if unsubscribe mechanism is functioning correctly for this patient."
+
+### Example 11: Medication Sourcing Concern
 **Patient:** "How do I know your medications are legitimate?"
 **Response (confidence = 0.85, SOLVE):** "All our medications are sourced from licensed UK pharmaceutical suppliers and go through the same regulated supply chain as your local high-street pharmacy. Every prescription is reviewed by a qualified clinician and dispensed by a pharmacy registered with the General Pharmaceutical Council (GPhC). I hope this helps!"
 

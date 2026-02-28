@@ -28,6 +28,21 @@
 
 ## Decision Tree
 
+### Step 0: Check if self-serve has already failed
+
+⚠️ **BEFORE classifying, check if the patient has ALREADY TRIED to unsubscribe and it didn't work.**
+
+IF the patient mentions ANY of these:
+- Unsubscribe link doesn't work, bounced, or came back as undeliverable
+- Already unsubscribed but still receiving emails/texts
+- Can't reply to marketing texts/SMS
+- Can't find communication preferences or unsubscribe settings in the app
+- Has tried multiple times to stop communications
+
+→ Go to **Path F** (Self-Serve Failed)
+
+If the patient has NOT mentioned trying already → proceed to Step 1.
+
 ### Step 1: Classify the request
 
 Read the patient's actual message carefully. Classify into one of these categories:
@@ -109,6 +124,20 @@ However, you can unsubscribe from our marketing and promotional emails by clicki
 
 ---
 
+### Path F: Self-Serve Failed (Unsubscribe Not Working)
+
+→ confidence = 0.50 (ESCALATE)
+
+⚠️ Do NOT repeat the standard unsubscribe instructions — the patient just told you they don't work.
+
+"I'm sorry about this — it's really frustrating when the unsubscribe process doesn't work as it should. I've passed this directly to our team so they can remove you from our marketing emails and texts on their end. You should stop receiving them shortly. Apologies again for the inconvenience."
+
+**Internal note:** "Issue: Patient reports unsubscribe is not working (link bounced/undeliverable, still receiving emails/SMS after attempting to unsubscribe, or cannot find settings). Patient has already attempted self-serve.\nAction: Manually remove patient from all marketing email and SMS lists. Investigate why unsubscribe mechanism failed for this patient."
+
+⚠️ **CRITICAL**: Never tell a patient to try the same thing they just told you doesn't work. That is the single most frustrating AI response pattern.
+
+---
+
 ## Mandatory Escalation Triggers
 
 Set confidence_score <= 0.55 and ESCALATE if ANY of these are present:
@@ -152,7 +181,12 @@ Patient: "I want all my data deleted. Remove my account entirely."
 → Path D → confidence = 0.50 (ESCALATE)
 → "I understand you'd like your account and data removed. This is a data protection request that our team needs to handle. I've passed this to our patient care team, and they'll be in touch within 24–48 hours to process this for you."
 
-**Example 5: Wants to stop clinical emails**
+**Example 5: Self-serve failed — unsubscribe bounced**
+Patient: "Since ending my plan I am being bombarded with texts and emails. I have tried to unsubscribe via the email but it comes back as undeliverable and I cannot reply to the texts. Please remove me from your mailing and text lists."
+→ Path F → confidence = 0.50 (ESCALATE)
+→ "I'm sorry about this — it's really frustrating when the unsubscribe process doesn't work as it should. I've passed this directly to our team so they can remove you from our marketing emails and texts on their end. You should stop receiving them shortly. Apologies again for the inconvenience."
+
+**Example 6: Wants to stop clinical emails**
 Patient: "I keep getting emails about my prescription and order updates. Can you stop those?"
 → Path E → confidence = 0.90 (SOLVE)
 → "I understand you'd like fewer emails. Unfortunately, clinical and order-related emails can't be turned off as they contain important information about your treatment and deliveries. However, you can unsubscribe from our marketing and promotional emails by clicking the 'Unsubscribe' link at the bottom of any promotional email. This will reduce the overall number of emails while ensuring you still get the important updates about your care. I hope this helps!"
